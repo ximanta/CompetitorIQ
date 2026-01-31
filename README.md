@@ -14,7 +14,7 @@ Automate curriculum gap analysis using Gemini 2.0 Flash with interactive Excel v
    ```bash
    uv sync
    ```
-3. Set up `.env` with your `GEMINI_KEY`.
+3. Set up `.env` with your `GEMINI_KEY` or set in the UI.
 
 ## Managing Topics
 The application reads topics from `src/data/master/Agentic AI Course Content Competition Analysis.xlsx`.
