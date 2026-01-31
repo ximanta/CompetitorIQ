@@ -56,9 +56,11 @@ def check_password():
             input_hash = hashlib.sha256(input_pwd.encode()).hexdigest()
             
             # Iterate over all configured users
+            # Iterate over all configured users
             for user, stored_hash in st.secrets["passwords"].items():
                 if input_hash == stored_hash:
                     st.session_state["password_correct"] = True
+                    st.session_state["user_role"] = user # Store 'admin' or 'user'
                     # Optional: clear password from session state for security
                     st.session_state["password"] = "" 
                     return
@@ -98,6 +100,39 @@ def check_password():
 
 if not check_password():
     st.stop()
+
+# --- ADMIN DASHBOARD ---
+def admin_dashboard():
+    if st.session_state.get("user_role") == "admin":
+        with st.sidebar:
+            st.divider()
+            st.subheader("🛡️ Admin Panel")
+            
+            with st.expander("File Manager"):
+                master_dir = "src/data/master"
+                if os.path.exists(master_dir):
+                    files = [f for f in os.listdir(master_dir) if f.endswith(".xlsx")]
+                    
+                    if files:
+                        st.write(f"Found {len(files)} files:")
+                        for file in files:
+                            c1, c2 = st.columns([3, 1])
+                            c1.font_size = "small"
+                            c1.caption(file)
+                            if c2.button("🗑️", key=f"del_{file}", help=f"Delete {file}"):
+                                try:
+                                    os.remove(os.path.join(master_dir, file))
+                                    st.toast(f"Deleted {file}")
+                                    time.sleep(0.5)
+                                    st.rerun()
+                                except Exception as e:
+                                    st.error(str(e))
+                    else:
+                        st.info("No files found.")
+                else:
+                    st.error("Start Analysis first to create the data folder.")
+
+admin_dashboard()
 
 # --- APP LAYOUT ---
 # Main Header
