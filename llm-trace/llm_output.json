@@ -1,0 +1,352 @@
+[
+  {
+    "topic": "Concurrency (threading/multithreading/async)",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention concurrency, threading, multithreading, or asynchronous programming concepts."
+  },
+  {
+    "topic": "Dev environment (VS Code, Jupyter, Colab)",
+    "decision": "Yes",
+    "reasoning": "The tool list explicitly includes 'Jupyter'."
+  },
+  {
+    "topic": "FastAPI for services/orchestration",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'FastAPI serving' as a key topic in Module 3 and includes 'FastAPI' in the list of tools."
+  },
+  {
+    "topic": "File I/O, logging & error handling",
+    "decision": "Unsure",
+    "reasoning": "The content mentions 'Privacy/audit logging', 'Telemetry/observability', and 'SLOs/error budgets' in a production context. However, it is not clear if foundational programming concepts of file I/O and general error handling are covered."
+  },
+  {
+    "topic": "Object-Oriented Programming (OOP)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Python OOP' as a key topic in Module 1."
+  },
+  {
+    "topic": "Python basics (syntax, types, loops, functions)",
+    "decision": "Yes",
+    "reasoning": "This is an implied match. Module 1 aims to 'Build a strong AI engineering foundation' and covers 'Python OOP', which presupposes a knowledge of Python basics."
+  },
+  {
+    "topic": "Testing (pytest, unit tests)",
+    "decision": "No",
+    "reasoning": "The content mentions 'A/B testing' for models and 'Red team testing' for security, but there is no mention of software testing concepts like unit tests or frameworks like pytest."
+  },
+  {
+    "topic": "Typing & data validation (type hints, @dataclass, Pydantic)",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention type hints, dataclasses, or data validation libraries like Pydantic."
+  },
+  {
+    "topic": "Version control (Git/GitHub/GitLab)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Git/GitHub' as a key topic in Module 1 and 'GitHub' and 'GitHub Actions' in the tools and modules sections."
+  },
+  {
+    "topic": "AI dev tools (Cursor, Windsurf, Replit, vo.dev, Lovable)",
+    "decision": "No",
+    "reasoning": "None of the specified AI developer tools are mentioned in the program content."
+  },
+  {
+    "topic": "Auth & security (JWT, CORS, RBAC)",
+    "decision": "No",
+    "reasoning": "The content mentions general security concepts like 'IAM/security' but does not explicitly list specific authentication/authorization technologies like JWT, CORS, or RBAC."
+  },
+  {
+    "topic": "Frontend UI (React)",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention React or any other JavaScript-based frontend framework."
+  },
+  {
+    "topic": "Frontend UI (Streamlit/Gradio)",
+    "decision": "Yes",
+    "reasoning": "The tool list explicitly includes 'Streamlit'."
+  },
+  {
+    "topic": "Mobile app integration (iOS/Android)",
+    "decision": "No",
+    "reasoning": "There is no mention of mobile application development or integration in the program content."
+  },
+  {
+    "topic": "OpenAPI specifications",
+    "decision": "No",
+    "reasoning": "While the curriculum includes FastAPI, which uses OpenAPI, the specification itself is not mentioned as a topic of study."
+  },
+  {
+    "topic": "RPC/Realtime (gRPC/WebRTC)",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention any RPC or real-time communication frameworks like gRPC or WebRTC."
+  },
+  {
+    "topic": "Streaming & comms (WebSocket, SSE)",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention any data streaming or communication protocols like WebSocket or SSE."
+  },
+  {
+    "topic": "Web apps with Flask",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention the Flask framework; it lists FastAPI for API serving instead."
+  },
+  {
+    "topic": "Agent memory / short-term memory",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Memory systems' as a key topic in Module 6, 'Agent Frameworks & Orchestration'."
+  },
+  {
+    "topic": "Chunking strategies",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Chunking strategies' as a key topic in Module 5."
+  },
+  {
+    "topic": "Citations & source tracking",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Citation/attribution' as a key topic in Module 5 and includes a sample project for a 'Production RAG API with citations'."
+  },
+  {
+    "topic": "ETL for docs (PDF/HTML/CSV) & metadata",
+    "decision": "Unsure",
+    "reasoning": "Module 1 covers 'Build production-ready data pipelines', which implies ETL. However, the content does not specify the types of documents (PDF, HTML, etc.) handled, making the coverage ambiguous."
+  },
+  {
+    "topic": "Embeddings & vector databases (Chroma, Pinecone, Weaviate, FAISS, pgvector)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Embeddings/similarity' and 'Vector DBs (Pinecone/Weaviate/Chroma)' as key topics in Module 5. These tools are also in the tools list."
+  },
+  {
+    "topic": "Guardrails, refusals & prompt injection defense",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Prompt injection defense' in Module 7. This, along with 'Retrieval governance' and 'Fairness/bias', covers the core concepts of this topic."
+  },
+  {
+    "topic": "Knowledge graphs in RAG",
+    "decision": "No",
+    "reasoning": "There is no mention of knowledge graphs in the program content."
+  },
+  {
+    "topic": "Postgres + pgvector",
+    "decision": "No",
+    "reasoning": "The curriculum mentions MySQL and several vector-native databases, but there is no mention of Postgres or the pgvector extension."
+  },
+  {
+    "topic": "RAG evaluation & fallback strategies",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'RAG evaluation' as a key topic in Module 5. While fallback strategies are not explicitly named, evaluation is a direct match."
+  },
+  {
+    "topic": "RAG pipeline (build)",
+    "decision": "Yes",
+    "reasoning": "Module 5 is titled 'LLM Foundations & RAG Systems' and includes a sample project to build a 'RAG prototype with metrics', clearly indicating coverage."
+  },
+  {
+    "topic": "Rerankers",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention rerankers or reranking as a concept."
+  },
+  {
+    "topic": "Semantic search & hybrid BM25+vector fusion",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Hybrid search' as a key topic in Module 5, which unambiguously implies the combination of semantic (vector) and other search methods."
+  },
+  {
+    "topic": "AutoGen",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'AutoGen' as a key topic in Module 6 and includes it in the list of tools."
+  },
+  {
+    "topic": "CrewAI",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'CrewAI' as a key topic in Module 6 and includes it in the list of tools."
+  },
+  {
+    "topic": "LangChain",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'LangChain' as a key topic in Module 6 and includes it in the list of tools."
+  },
+  {
+    "topic": "LangFlow",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention LangFlow."
+  },
+  {
+    "topic": "LangGraph",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'LangGraph' as a key topic in Module 6 and includes it in the list of tools."
+  },
+  {
+    "topic": "LlamaIndex",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'LlamaIndex' as a key topic in Module 6 and includes it in the list of tools."
+  },
+  {
+    "topic": "MCP (Model Context Protocol)",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention MCP or Model Context Protocol."
+  },
+  {
+    "topic": "OpenAI Assistants API",
+    "decision": "No",
+    "reasoning": "The content mentions 'OpenAI... APIs' at a generic level but does not specify coverage of the Assistants API."
+  },
+  {
+    "topic": "Phidata",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention Phidata."
+  },
+  {
+    "topic": "Planning/Reasoning: ReAct, Reflexion, Self-corrective, planner/actor/critic",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists the 'ReAct pattern' in Modules 5 and 6, and 'Planning/goal decomposition' in Module 6, covering key aspects of agent reasoning."
+  },
+  {
+    "topic": "Retries & circuit breakers",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention these specific software resilience patterns."
+  },
+  {
+    "topic": "Swarm/BeeAI",
+    "decision": "No",
+    "reasoning": "The curriculum does not mention Swarm or BeeAI."
+  },
+  {
+    "topic": "Tool calling & chaining",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Tool use/function calling' and 'LangChain (chains/agents/tools/memory)' as key topics in Module 6."
+  },
+  {
+    "topic": "Tracing/Observability (Langfuse, OpenTelemetry)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Telemetry/observability' as a key topic in Module 6."
+  },
+  {
+    "topic": "API integration & rate limits, key management",
+    "decision": "Unsure",
+    "reasoning": "The content mentions using 'OpenAI/Anthropic/Google APIs' and 'IAM/security', but it does not explicitly state that rate limits and key management are covered topics, which would require an assumption."
+  },
+  {
+    "topic": "Hallucinations, jailbreaks & safety",
+    "decision": "Yes",
+    "reasoning": "This is an implied match. The curriculum covers 'Prompt injection defense', 'Red team testing', 'Fairness/bias', and 'Citation/attribution', which are all key techniques for managing hallucinations, jailbreaks, and ensuring AI safety."
+  },
+  {
+    "topic": "LLM caching & prompt/version management (LCEL/Runnable)",
+    "decision": "No",
+    "reasoning": "The content mentions generic 'Caching/optimization' and 'Git/GitHub' for version control, but does not specifically mention LLM caching, prompt versioning, or LangChain-specific concepts like LCEL."
+  },
+  {
+    "topic": "Open vs closed models; model selection",
+    "decision": "Unsure",
+    "reasoning": "The curriculum lists tools for both open (Hugging Face) and closed (OpenAI APIs) models, and covers 'Evaluation/benchmarking'. However, a direct discussion on the trade-offs or a formal topic on model selection is not mentioned."
+  },
+  {
+    "topic": "Prompt engineering (zero/few-shot, role-based, ReAct, self-consistency)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Prompt engineering (few-shot/ReAct)' as a key topic in Module 5."
+  },
+  {
+    "topic": "Prompt evaluation & debugging",
+    "decision": "Yes",
+    "reasoning": "This is an implied match. The curriculum includes 'RAG evaluation', 'Evaluation/benchmarking', and a 'Prompt engineering challenge' project, which all involve the evaluation of prompts."
+  },
+  {
+    "topic": "Tokens & context windows",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Token economics/cost optimization' as a key topic in Module 5, which requires a fundamental understanding of tokens and context windows."
+  },
+  {
+    "topic": "Transformers & attention (basics)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Transformers/attention' as a key topic in Module 2."
+  },
+  {
+    "topic": "Fine-tuning (LoRA/QLoRA/PEFT/DoRA)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Fine-tuning strategies' and 'LoRA/QLoRA/PEFT' as key topics in Module 7."
+  },
+  {
+    "topic": "RLHF/RHLF & Reinforcement Learning",
+    "decision": "No",
+    "reasoning": "There is no mention of Reinforcement Learning, RLHF, or RHLF in the program content."
+  },
+  {
+    "topic": "Hugging Face Transformers",
+    "decision": "Yes",
+    "reasoning": "This is an implied match. The tool list includes 'Hugging Face' and Module 2 covers 'Transformers/attention' and 'BERT/GPT', making it clear that the Hugging Face ecosystem would be used."
+  },
+  {
+    "topic": "NumPy & Pandas",
+    "decision": "Yes",
+    "reasoning": "The tool list explicitly includes 'Numpy' and 'Pandas', and Module 1 lists 'Pandas advanced' as a key topic."
+  },
+  {
+    "topic": "PyTorch / TensorFlow / Keras",
+    "decision": "Yes",
+    "reasoning": "The tool list explicitly includes 'Tensorflow' and 'PyTorch'."
+  },
+  {
+    "topic": "Scikit-learn & classical ML (regression, classification, metrics)",
+    "decision": "Yes",
+    "reasoning": "The tool list includes 'Scitkit Learn', and Module 2 explicitly covers classical ML topics like 'Linear/logistic regression', 'Trees/boosting', 'SVM/ensembles', and 'Model evaluation'."
+  },
+  {
+    "topic": "Visualization (Matplotlib/Seaborn/Plotly/Bokeh/BertViz)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Matplotlib/Seaborn' as a key topic in Module 1, and the tool list includes 'Matplotlib', 'Seaborn', and 'Plotly'."
+  },
+  {
+    "topic": "Vision/Audio/Video (CLIP, DALL·E, Diffusion, Whisper, TTS, VLMs, Sora)",
+    "decision": "No",
+    "reasoning": "The content only mentions 'CNNs/transfer learning' for an 'Image classifier' project. This is basic computer vision and does not cover the specified modern generative or multi-modal AI topics."
+  },
+  {
+    "topic": "Cloud providers & SDKs (Azure, Bedrock, Vertex, watsonx, Boto3)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly covers 'AWS' services extensively, including 'SageMaker' and 'Bedrock'. This constitutes significant coverage of major cloud providers."
+  },
+  {
+    "topic": "Containerization & CI/CD",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'Docker containerization' in Module 3 and 'CI/CD (GitHub Actions)' in Module 7."
+  },
+  {
+    "topic": "Copilot Studio / Microsoft Copilot ecosystem",
+    "decision": "No",
+    "reasoning": "While there is a partnership with Microsoft for a certificate and an 'immersion' experience, the curriculum content does not mention teaching Copilot Studio or its ecosystem."
+  },
+  {
+    "topic": "Deployment (cloud & edge)",
+    "decision": "Yes",
+    "reasoning": "The program has a strong focus on cloud deployment, with modules on 'MLOps & Production Systems', 'Agent Deployment', and capstone deliverables requiring 'AWS deployment'. Edge deployment is not mentioned."
+  },
+  {
+    "topic": "LLMOps: monitoring, tracing, eval (Langsmith, Langwatch, AgentOps)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly covers the core concepts of LLMOps, including 'Monitoring dashboards' (Module 3), 'RAG evaluation' (Module 5), and 'Telemetry/observability' (Module 6)."
+  },
+  {
+    "topic": "MLOps foundations (MLflow, versioning)",
+    "decision": "Yes",
+    "reasoning": "Module 3 is titled 'MLOps & Production Systems' and explicitly lists 'MLflow tracking' as a key topic. Versioning is covered with 'Git/GitHub'."
+  },
+  {
+    "topic": "Multi-Agent Reinforcement Learning (MARL)",
+    "decision": "No",
+    "reasoning": "While the program covers multi-agent systems, there is no mention of them in the context of reinforcement learning (MARL)."
+  },
+  {
+    "topic": "Performance & cost optimization (latency, P95/TSR)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly mentions 'Cost optimization' multiple times, as well as performance topics like 'Ray Serve scaling', 'Load balancing', and 'Caching/optimization' in Module 7."
+  },
+  {
+    "topic": "Security & governance (RBAC, PII redaction, API protection, access control, regulatory)",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly covers multiple security and governance topics, including 'IAM/security', 'Privacy/audit logging', 'Prompt injection defense', 'Governance/audit', and 'EU AI Act compliance'."
+  },
+  {
+    "topic": "Testing in prod: SLOs, shadow runs, gold sets",
+    "decision": "Yes",
+    "reasoning": "The curriculum explicitly lists 'SLOs/error budgets' in Module 6, as well as production testing strategies like 'A/B testing' and 'Blue-green/canary deploys'."
+  }
+]
