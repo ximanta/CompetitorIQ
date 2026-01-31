@@ -44,32 +44,31 @@ def check_password():
         """Checks whether a password entered by the user is correct."""
         try:
             if "passwords" not in st.secrets:
-                st.error("❌ 'passwords' section not found in secrets.toml or Streamlit Cloud Secrets.")
+                st.error("❌ 'passwords' section not found in secrets.toml.")
                 return
 
-            if st.session_state["password"] in st.secrets["passwords"]:
-                input_hash = hashlib.sha256(st.session_state["password"].encode()).hexdigest()
-                for user, stored_hash in st.secrets["passwords"].items():
-                    if input_hash == stored_hash:
-                         st.session_state["password_correct"] = True
-                         return
+            # Robust Check: Hash input and compare with ALL stored hashes
+            input_pwd = st.session_state["password"].strip()
+            if not input_pwd:
+                st.error("Please enter a password.")
+                return
+                
+            input_hash = hashlib.sha256(input_pwd.encode()).hexdigest()
+            
+            # Iterate over all configured users
+            for user, stored_hash in st.secrets["passwords"].items():
+                if input_hash == stored_hash:
+                    st.session_state["password_correct"] = True
+                    # Optional: clear password from session state for security
+                    st.session_state["password"] = "" 
+                    return
+            
+            # If we get here, no match found
+            st.session_state["password_correct"] = False
+            st.error("😕 Password incorrect")
+            
         except Exception as e:
             st.error(f"Authentication Error: {e}")
-            
-            st.session_state["password_correct"] = False
-        else:
-             # Plain text check fallback or just fail
-             # Actually, simpler: Input -> Hash -> Compare with stored hash
-             input_txt = st.session_state["password"]
-             input_hash = hashlib.sha256(input_txt.encode()).hexdigest()
-             
-             for user, stored_hash in st.secrets["passwords"].items():
-                if input_hash == stored_hash:
-                     st.session_state["password_correct"] = True
-                     del st.session_state["password"]  # Don't store password
-                     return
-                     
-             st.session_state["password_correct"] = False
 
     if "password_correct" not in st.session_state:
         # First run, show input
