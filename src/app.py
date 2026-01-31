@@ -42,22 +42,19 @@ def check_password():
 
     def password_entered():
         """Checks whether a password entered by the user is correct."""
-        if st.session_state["password"] in st.secrets["passwords"]:
-            input_hash = hashlib.sha256(st.session_state["password"].encode()).hexdigest()
-            # Check against the stored hash for the username (assuming just one 'admin' or generic)
-            # Simplification: We iterate or check specific key. 
-            # Given secrets.toml structure: admin = "hash"
-            # We will just check if the HASH of the input exists in the values of secrets.passwords
-            
-            # Correction: simple lookup
-            # stored_hash = st.secrets["passwords"]["admin"]
-            # if input_hash == stored_hash: ...
-            
-            # Let's support any user in the secrets file
-            for user, stored_hash in st.secrets["passwords"].items():
-                if input_hash == stored_hash:
-                     st.session_state["password_correct"] = True
-                     return
+        try:
+            if "passwords" not in st.secrets:
+                st.error("❌ 'passwords' section not found in secrets.toml or Streamlit Cloud Secrets.")
+                return
+
+            if st.session_state["password"] in st.secrets["passwords"]:
+                input_hash = hashlib.sha256(st.session_state["password"].encode()).hexdigest()
+                for user, stored_hash in st.secrets["passwords"].items():
+                    if input_hash == stored_hash:
+                         st.session_state["password_correct"] = True
+                         return
+        except Exception as e:
+            st.error(f"Authentication Error: {e}")
             
             st.session_state["password_correct"] = False
         else:
