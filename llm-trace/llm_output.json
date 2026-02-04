@@ -2,351 +2,351 @@
   {
     "topic": "Concurrency (threading/multithreading/async)",
     "decision": "No",
-    "reasoning": "The content mentions optimizing for speed and latency, but does not explicitly cover concurrency, threading, multithreading, or async programming as a specific topic."
+    "reasoning": "No explicit mention of concurrency, threading, multithreading, or async programming concepts was found in the content."
   },
   {
     "topic": "Dev environment (VS Code, Jupyter, Colab)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Prototyping in notebooks,' which implies the use of development environments like Jupyter or Colab."
+    "decision": "No",
+    "reasoning": "The content does not explicitly mention specific development environments like VS Code, Jupyter, or Colab."
   },
   {
     "topic": "FastAPI for services/orchestration",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'FastAPI' as part of 'Model Serving & API Development' in Module 5."
+    "decision": "No",
+    "reasoning": "FastAPI is not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "File I/O, logging & error handling",
     "decision": "Unsure",
-    "reasoning": "The content mentions 'failure handling' and 'debugging retrieval failures,' which are related to error handling, but it does not explicitly cover File I/O or logging, making overall coverage ambiguous."
+    "reasoning": "\"Working with Files and Databases\" implies File I/O, but there is no explicit mention of logging or error handling, making coverage ambiguous for the full topic."
   },
   {
     "topic": "Object-Oriented Programming (OOP)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention Object-Oriented Programming (OOP) or related concepts."
+    "reasoning": "Object-Oriented Programming (OOP) is not explicitly mentioned in the content."
   },
   {
     "topic": "Python basics (syntax, types, loops, functions)",
-    "decision": "No",
-    "reasoning": "Python basics are listed as a prerequisite for the program ('Can you write Python functions and work with basic data structures?'), not a topic covered within the curriculum."
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions \"mastering Python\" and includes an \"Introduction to Python\" module, which implies coverage of Python basics."
   },
   {
     "topic": "Testing (pytest, unit tests)",
-    "decision": "No",
-    "reasoning": "While the content frequently mentions 'evaluation' in the context of model performance and accuracy, it does not explicitly cover software testing frameworks like pytest or unit tests."
+    "decision": "Unsure",
+    "reasoning": "While \"Testing\" is mentioned in several contexts (e.g., \"Testing /Eval\", \"Real World Testin\", \"Testing and Monitoring your AI Agent\"), there is no explicit mention of specific testing frameworks like pytest or unit tests, making the depth of coverage unclear."
   },
   {
     "topic": "Typing & data validation (type hints, @dataclass, Pydantic)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention typing, data validation, type hints, @dataclass, or Pydantic."
+    "reasoning": "No explicit mention of typing, type hints, dataclasses, Pydantic, or data validation was found."
   },
   {
     "topic": "Version control (Git/GitHub/GitLab)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention version control systems like Git, GitHub, or GitLab."
+    "reasoning": "Version control systems like Git, GitHub, or GitLab are not explicitly mentioned in the content."
   },
   {
     "topic": "AI dev tools (Cursor, Windsurf, Replit, vo.dev, Lovable)",
-    "decision": "No",
-    "reasoning": "The content does not explicitly mention any of the listed specific AI development tools."
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions \"Coding with Windsur\" and \"From Prompt to Product: Vibe Coding with Windsur\", covering one of the listed AI dev tools."
   },
   {
     "topic": "Auth & security (JWT, CORS, RBAC)",
     "decision": "No",
-    "reasoning": "While the content mentions 'safety guardrails,' 'privacy,' and 'internal governance' related to responsible AI, it does not explicitly cover technical authentication and security mechanisms like JWT, CORS, or RBAC."
+    "reasoning": "Authentication and specific security concepts like JWT, CORS, or RBAC are not explicitly mentioned in the content."
   },
   {
     "topic": "Frontend UI (React)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention frontend UI frameworks like React."
+    "reasoning": "While \"UI Development\" is mentioned, there is no explicit reference to React or specific frontend UI frameworks."
   },
   {
     "topic": "Frontend UI (Streamlit/Gradio)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention frontend UI frameworks like Streamlit or Gradio."
+    "reasoning": "Streamlit or Gradio are not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "Mobile app integration (iOS/Android)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention mobile app integration for iOS or Android."
+    "reasoning": "Mobile app integration (iOS/Android) is not explicitly mentioned in the content."
   },
   {
     "topic": "OpenAPI specifications",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention OpenAPI specifications."
+    "reasoning": "OpenAPI specifications are not explicitly mentioned in the content."
   },
   {
     "topic": "RPC/Realtime (gRPC/WebRTC)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention RPC, gRPC, WebRTC, or other realtime communication protocols."
+    "reasoning": "RPC, gRPC, WebRTC, or other real-time communication protocols are not explicitly mentioned."
   },
   {
     "topic": "Streaming & comms (WebSocket, SSE)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention streaming, WebSocket, or SSE."
+    "reasoning": "Streaming and communication protocols like WebSocket or SSE are not explicitly mentioned."
   },
   {
     "topic": "Web apps with Flask",
     "decision": "No",
-    "reasoning": "The content explicitly mentions FastAPI but does not mention Flask for web application development."
+    "reasoning": "Flask or building web applications with Flask is not explicitly mentioned."
   },
   {
     "topic": "Agent memory / short-term memory",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'memory' as a component of 'Agentic AI Systems' in Module 4."
+    "reasoning": "The content explicitly mentions \"Memory and Conversational Agents\" and \"Memory & Conversational Agentic AI Syst em\", directly covering agent memory."
   },
   {
     "topic": "Chunking strategies",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Chunking' as part of 'RAG Fundamentals' in Module 2."
+    "reasoning": "The content explicitly mentions \"Data Loading, Splitting & Chunking\" within the RAG Systems Essential module, directly covering chunking strategies."
   },
   {
     "topic": "Citations & source tracking",
-    "decision": "Unsure",
-    "reasoning": "While RAG systems inherently involve retrieving information from sources, the content does not explicitly mention 'citations & source tracking' as a specific topic or feature, leading to ambiguity."
+    "decision": "No",
+    "reasoning": "No explicit mention of citations or source tracking was found in the content."
   },
   {
     "topic": "ETL for docs (PDF/HTML/CSV) & metadata",
     "decision": "Unsure",
-    "reasoning": "The content mentions handling 'large document collections' for RAG, which implies data ingestion, but it does not explicitly cover ETL processes, specific document formats (PDF/HTML/CSV), or metadata handling."
+    "reasoning": "\"Data Loading\" is mentioned in the context of RAG, but specific ETL processes for various document types (PDF/HTML/CSV) and metadata handling are not explicitly detailed, leading to uncertainty."
   },
   {
     "topic": "Embeddings & vector databases (Chroma, Pinecone, Weaviate, FAISS, pgvector)",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'embeddings' in Module 1 and 'vector databases' in Module 2 as core components of LLMs and RAG systems."
+    "reasoning": "The content explicitly mentions \"Implementing Vector Databases\" and \"Setting up Chroma DB\", directly covering embeddings and vector databases."
   },
   {
     "topic": "Guardrails, refusals & prompt injection defense",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Guardrails' in Module 5 and 'safety prompts' in Module 2, which are directly related to defending against prompt injection and ensuring responsible AI behavior."
+    "decision": "Unsure",
+    "reasoning": "While \"Responsible AI\" and \"addressing biases\" are mentioned, there is no explicit mention of specific guardrails, refusal mechanisms, or prompt injection defense techniques, making the coverage ambiguous."
   },
   {
     "topic": "Knowledge graphs in RAG",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention knowledge graphs in the context of RAG or any other topic."
+    "reasoning": "Knowledge graphs in RAG are not explicitly mentioned in the content."
   },
   {
     "topic": "Postgres + pgvector",
     "decision": "No",
-    "reasoning": "While 'vector databases' are mentioned, the content does not explicitly refer to 'Postgres' or 'pgvector.'"
+    "reasoning": "While \"Working with Files and Databases\" is mentioned, there is no explicit reference to Postgres or pgvector."
   },
   {
     "topic": "RAG evaluation & fallback strategies",
-    "decision": "Yes",
-    "reasoning": "The content explicitly covers 'RAG evaluation' with mentions of 'RAGAS-style thinking' and 'evaluation pipeline' in Module 2. 'Failure handling' is also mentioned, implying related strategies."
+    "decision": "Unsure",
+    "reasoning": "\"Evaluating RAG System Performanc\" is explicitly covered, but fallback strategies are not mentioned, making the coverage of the full topic ambiguous."
   },
   {
     "topic": "RAG pipeline (build)",
     "decision": "Yes",
-    "reasoning": "The content explicitly states 'build enterprise-grade RAG pipelines' and describes building an 'ENTERPRISE RAG SYSTEM' in Module 2."
+    "reasoning": "The content explicitly mentions \"Introduction to Retrieval-Augmented Generation (RAG) Systems\", \"Building Retrieval Systems\", and \"developing RAG-based solutions\", which directly covers building RAG pipelines."
   },
   {
     "topic": "Rerankers",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 're-ranking' as part of 'Advanced RAG Techniques' in Module 2 and in the description of the 'ENTERPRISE RAG SYSTEM.'"
+    "decision": "No",
+    "reasoning": "Rerankers are not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "Semantic search & hybrid BM25+vector fusion",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'hybrid search' in Module 2 and in the description of the RAG system, which implies semantic search and hybrid fusion techniques."
+    "decision": "Unsure",
+    "reasoning": "While \"Implementing Vector Databases and Retrievers\" and \"Adding Search to Agents\" are mentioned, the specific terms \"semantic search\" or \"hybrid BM25+vector fusion\" are not explicitly used, leading to uncertainty about the depth of coverage."
   },
   {
     "topic": "AutoGen",
-    "decision": "No",
-    "reasoning": "The content does not explicitly mention AutoGen."
+    "decision": "Yes",
+    "reasoning": "AutoGen is explicitly mentioned multiple times, including its use for designing AI agents and in specific projects."
   },
   {
     "topic": "CrewAI",
-    "decision": "No",
-    "reasoning": "The content does not explicitly mention CrewAI."
+    "decision": "Yes",
+    "reasoning": "CrewAI is explicitly mentioned multiple times, including its use for designing AI agents and in specific projects."
   },
   {
     "topic": "LangChain",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Working with frameworks like LangChain' in the program overview."
+    "reasoning": "LangChain is explicitly mentioned multiple times, including its ecosystem, LCEL, and use for building AI agents."
   },
   {
     "topic": "LangFlow",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention LangFlow."
+    "reasoning": "LangFlow is not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "LangGraph",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'LangGraph-style concepts' in Module 4 as part of agent orchestration."
+    "reasoning": "LangGraph is explicitly mentioned multiple times, including its use for designing AI agents and in specific projects."
   },
   {
     "topic": "LlamaIndex",
-    "decision": "No",
-    "reasoning": "The content does not explicitly mention LlamaIndex."
+    "decision": "Yes",
+    "reasoning": "LlamaIndex is explicitly mentioned in the context of building production-ready RAG systems."
   },
   {
     "topic": "MCP (Model Context Protocol)",
-    "decision": "No",
-    "reasoning": "The content does not explicitly mention MCP (Model Context Protocol)."
+    "decision": "Yes",
+    "reasoning": "MCP (Model Context Protocol) is explicitly mentioned with dedicated modules covering its introduction, architecture, and applications."
   },
   {
     "topic": "OpenAI Assistants API",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention the OpenAI Assistants API."
+    "reasoning": "While \"Working with Commercial & Open-Source LLM API\" is mentioned, the specific OpenAI Assistants API is not explicitly referenced."
   },
   {
     "topic": "Phidata",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention Phidata."
+    "reasoning": "Phidata is not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "Planning/Reasoning: ReAct, Reflexion, Self-corrective, planner/actor/critic",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Planning' and 'Reasoning' as core capabilities of agentic AI systems in Module 4 and the Capstone project."
+    "reasoning": "The content explicitly mentions \"Reflection Pattern\", \"Planning Pattern\", \"Build a Reflection Agent\", \"Build a Planning Agent\", and \"Agentic Corrective RAG System\", directly covering several planning and reasoning techniques."
   },
   {
     "topic": "Retries & circuit breakers",
-    "decision": "Unsure",
-    "reasoning": "While the content mentions 'reliability,' 'failure modes,' and 'failure handling,' it does not explicitly cover specific patterns like 'retries & circuit breakers,' making the coverage ambiguous."
+    "decision": "No",
+    "reasoning": "Retries and circuit breakers are not explicitly mentioned in the content."
   },
   {
     "topic": "Swarm/BeeAI",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention Swarm or BeeAI."
+    "reasoning": "Swarm/BeeAI is not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "Tool calling & chaining",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'tool-calling' in Module 2 and 'tool use' in Module 4, and implies chaining through 'orchestration' and 'multi-agent workows.'"
+    "reasoning": "The content explicitly mentions \"Introduction to Tools and Tool Calling\", \"The Tool Use Pattern in Agentic AI\", and \"Advanced LLM Chain\", directly covering tool calling and chaining."
   },
   {
     "topic": "Tracing/Observability (Langfuse, OpenTelemetry)",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'observability' and 'monitoring' in the context of deploying systems in Module 5, which directly covers the core concept."
+    "reasoning": "The content explicitly mentions \"Langfuse for CICD\" and \"Monitoring your AI Agent\", covering tracing/observability with a specific tool."
   },
   {
     "topic": "API integration & rate limits, key management",
     "decision": "Unsure",
-    "reasoning": "The content mentions 'Using LLM APIs effectively' and 'Model Serving & API Development,' and 'cost control,' but it does not explicitly cover specific API integration details like 'rate limits' or 'key management,' leading to ambiguity."
+    "reasoning": "\"Working with APIs\" is explicitly mentioned, implying API integration, but there is no explicit mention of rate limits or key management, making the coverage of the full topic ambiguous."
   },
   {
     "topic": "Hallucinations, jailbreaks & safety",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'hallucination handling' in Module 5 and emphasizes 'safety guardrails' and 'responsible GenAI,' which implicitly covers defense against jailbreaks."
+    "decision": "Unsure",
+    "reasoning": "While \"Responsible AI\" and \"Errors in AI\" are mentioned, specific terms like \"hallucinations\" or \"jailbreaks\" are not explicitly covered, leading to uncertainty about the depth of safety coverage."
   },
   {
     "topic": "LLM caching & prompt/version management (LCEL/Runnable)",
-    "decision": "No",
-    "reasoning": "The content does not explicitly mention LLM caching, prompt/version management, or specific frameworks like LCEL/Runnable."
+    "decision": "Unsure",
+    "reasoning": "\"Essentials of LangChain Expression Language (LCEL)\" is explicitly mentioned, which relates to prompt management, but LLM caching is not, making the coverage of the full topic ambiguous."
   },
   {
     "topic": "Open vs closed models; model selection",
-    "decision": "Yes",
-    "reasoning": "The content explicitly covers 'model selection' by discussing 'how to select the right model for cost, capability, and constraints' and listing examples of both open and closed models in Module 1."
+    "decision": "Unsure",
+    "reasoning": "\"Working with Commercial & Open-Source LLM API\" implies a distinction between open and closed models, but model selection itself is not explicitly detailed, leading to uncertainty."
   },
   {
     "topic": "Prompt engineering (zero/few-shot, role-based, ReAct, self-consistency)",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'Advanced Prompt Engineering' and 'Systematic prompting patterns' in Module 2, which includes 'tool-calling' and 'retrieval-aware prompts,' directly addressing the core concept."
+    "reasoning": "Prompt Engineering is explicitly mentioned with dedicated modules, and the \"Reflection Pattern\" implies coverage of ReAct, a key prompt engineering technique."
   },
   {
     "topic": "Prompt evaluation & debugging",
-    "decision": "Yes",
-    "reasoning": "The content emphasizes 'evaluation' (e.g., RAGAS-style thinking) and 'debugging retrieval failures' in Module 2, which implies the evaluation and debugging of prompts within the RAG context."
+    "decision": "No",
+    "reasoning": "While prompt engineering is covered, there is no explicit mention of prompt evaluation or debugging techniques."
   },
   {
     "topic": "Tokens & context windows",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'tokenisation' in Module 1 as part of how LLMs process language, which is a fundamental concept related to tokens and context windows."
+    "decision": "No",
+    "reasoning": "Tokens and context windows are not explicitly mentioned in the content."
   },
   {
     "topic": "Transformers & attention (basics)",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'The Transformer Architecture' and 'Attention' in Module 1 as foundational elements of LLMs."
+    "reasoning": "The content explicitly mentions \"Attention Mechanism and transformers\" within the NLP module, directly covering these foundational concepts."
   },
   {
     "topic": "Fine-tuning (LoRA/QLoRA/PEFT/DoRA)",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'Fine-tuning' and specifically mentions 'PEFT, LoRA, and QLoRA' in Module 3."
+    "reasoning": "The content explicitly mentions \"Fine-Tuning RAGs and Agent\" and has a dedicated \"Finetuning LLM\" module that covers \"Parameter-Efficient Finetuning (PEFT)\" and \"PEFT Techniques\"."
   },
   {
     "topic": "RLHF/RHLF & Reinforcement Learning",
-    "decision": "No",
-    "reasoning": "While 'Alignment' is mentioned in a module title, the content does not explicitly cover RLHF/RHLF or Reinforcement Learning."
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions \"Mastering Reinforcement learning foundations to human feedbac\" and \"Introduction to Reinforcement Learning\", which directly covers Reinforcement Learning and implies RLHF/RHLF."
   },
   {
     "topic": "Hugging Face Transformers",
-    "decision": "Unsure",
-    "reasoning": "The content covers 'The Transformer Architecture' and 'fine-tune open models,' which are often associated with Hugging Face Transformers, but the framework itself is not explicitly mentioned, leading to ambiguity."
+    "decision": "No",
+    "reasoning": "While \"transformers\" are mentioned, Hugging Face Transformers as a specific library or ecosystem is not explicitly referenced."
   },
   {
     "topic": "NumPy & Pandas",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention NumPy or Pandas."
+    "reasoning": "NumPy and Pandas are not explicitly mentioned in the competitor's content."
   },
   {
     "topic": "PyTorch / TensorFlow / Keras",
-    "decision": "Unsure",
-    "reasoning": "The content covers 'Neural network foundations' and 'deep learning essentials,' which typically involve frameworks like PyTorch or TensorFlow, but these specific frameworks are not explicitly mentioned, leading to ambiguity."
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions \"Introduction to Deep learning using PyTorc\", directly covering PyTorch."
   },
   {
     "topic": "Scikit-learn & classical ML (regression, classification, metrics)",
-    "decision": "No",
-    "reasoning": "The program focuses on Generative AI and Agentic AI, and does not explicitly cover Scikit-learn or classical machine learning concepts like regression or classification."
+    "decision": "Yes",
+    "reasoning": "The content explicitly covers \"Foundational ML Algorithm Regression\", \"Decision Tree\", \"Building a basic classification model\", and \"Evaluation Metric\", which are core classical ML concepts."
   },
   {
     "topic": "Visualization (Matplotlib/Seaborn/Plotly/Bokeh/BertViz)",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention any specific visualization libraries."
+    "reasoning": "Visualization tools or techniques like Matplotlib, Seaborn, or Plotly are not explicitly mentioned."
   },
   {
     "topic": "Vision/Audio/Video (CLIP, DALL·E, Diffusion, Whisper, TTS, VLMs, Sora)",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'Multimodal foundations,' 'text+image understanding and generation,' and 'Vision-Language Models & Image Generation' in Module 4."
+    "reasoning": "The content explicitly mentions \"Computer Vision\", \"exploring diffusion models\", and \"Advanced stable diffusion technique\", directly covering vision and diffusion models."
   },
   {
     "topic": "Cloud providers & SDKs (Azure, Bedrock, Vertex, watsonx, Boto3)",
-    "decision": "No",
-    "reasoning": "While the program focuses on deploying production-ready AI, it does not explicitly mention specific cloud providers or their SDKs."
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions \"AWS SageMaker for Data Scientist s\", covering a specific cloud provider's ML service."
   },
   {
     "topic": "Containerization & CI/CD",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'containerisation' in Module 5 as part of model serving and API development."
+    "decision": "Unsure",
+    "reasoning": "CI/CD is explicitly covered with mentions of \"Continuous Integration\", \"Continuous Deployment\", and \"Kubernetes\", but containerization itself (e.g., Docker) is only implied by Kubernetes, not explicitly named."
   },
   {
     "topic": "Copilot Studio / Microsoft Copilot ecosystem",
     "decision": "No",
-    "reasoning": "The content does not explicitly mention Copilot Studio or the Microsoft Copilot ecosystem."
+    "reasoning": "Copilot Studio or the Microsoft Copilot ecosystem are not explicitly mentioned."
   },
   {
     "topic": "Deployment (cloud & edge)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly and repeatedly emphasizes 'Deployment,' with a dedicated Module 5 on 'Deployment, Optimisation & AI Safety' and a focus on 'Production-Ready AI.'"
+    "decision": "Unsure",
+    "reasoning": "Deployment is explicitly covered in multiple contexts (e.g., \"Deploying your AI Agent\", \"Continuous Deployment\", \"Kubernetes\"), and cloud deployment is implied, but edge deployment is not mentioned, making the coverage of the full topic ambiguous."
   },
   {
     "topic": "LLMOps: monitoring, tracing, eval (Langsmith, Langwatch, AgentOps)",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'monitoring' and 'observability' in Module 5, and 'evaluation' is a recurring theme, which are key components of LLMOps."
+    "reasoning": "\"Mastering LLMOps\" is explicitly mentioned, and the content covers \"monitoring\", \"tracing\" (with Langfuse), and \"evaluating Agentic AI Systems\", directly addressing the core components of LLMOps."
   },
   {
     "topic": "MLOps foundations (MLflow, versioning)",
-    "decision": "Yes",
-    "reasoning": "The content extensively covers core MLOps foundations such as 'monitoring,' 'deployment,' 'reliability,' and 'evaluation' for production-grade AI systems."
+    "decision": "Unsure",
+    "reasoning": "While LLMOps is covered, general MLOps foundations like MLflow or explicit model/data versioning are not mentioned, leading to uncertainty about the breadth of MLOps coverage."
   },
   {
     "topic": "Multi-Agent Reinforcement Learning (MARL)",
-    "decision": "No",
-    "reasoning": "While 'multi-agent systems' and 'orchestration' are covered, the content does not explicitly mention 'Reinforcement Learning' in the context of multi-agent systems."
+    "decision": "Unsure",
+    "reasoning": "Both \"Multi-Agent System\" and \"Reinforcement Learning\" are covered as separate topics, but \"Multi-Agent Reinforcement Learning (MARL)\" as a combined, specific field is not explicitly mentioned, leading to uncertainty."
   },
   {
     "topic": "Performance & cost optimization (latency, P95/TSR)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly covers 'Performance & cost optimization,' mentioning 'optimizing for cost, speed, and reliability,' 'latency and cost optimisation,' and 'performance baselining' in Module 5."
+    "decision": "Unsure",
+    "reasoning": "While \"Optimizing AI adoption\" and \"Evaluating RAG System Performance\" imply a focus on performance, specific metrics like latency, P95/TSR, or explicit cost optimization strategies are not detailed, making the coverage ambiguous."
   },
   {
     "topic": "Security & governance (RBAC, PII redaction, API protection, access control, regulatory)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly covers 'governance' and aspects of 'security' through mentions of 'safety guardrails,' 'privacy,' and 'internal governance' for responsible AI use."
+    "decision": "Unsure",
+    "reasoning": "\"Responsible AI\" and \"ethical best practices\" are mentioned, which relate to governance, but specific security aspects like RBAC, PII redaction, API protection, or access control are not explicitly detailed, leading to uncertainty."
   },
   {
     "topic": "Testing in prod: SLOs, shadow runs, gold sets",
     "decision": "Unsure",
-    "reasoning": "While the program emphasizes 'running a system in production' and 'reliability,' it does not explicitly cover specific 'testing in prod' techniques like SLOs, shadow runs, or gold sets, leading to ambiguity."
+    "reasoning": "While \"Real World Testing\" and \"Testing and Monitoring your AI Agent\" imply testing in production, specific techniques like SLOs, shadow runs, or gold sets are not explicitly mentioned, making the coverage ambiguous."
   }
 ]
