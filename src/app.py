@@ -4,8 +4,8 @@ import os
 import logging
 import time
 from utils.extraction import extract_from_pdf, extract_from_url
-from utils.ai_engine import analyze_topics
-from utils.excel_handler import load_master_topics, update_excel_with_analysis
+from utils.ai_engine import analyze_topics, extract_price_duration_info, PriceDurationExtractionError
+from utils.excel_handler import load_master_topics, update_excel_with_analysis, get_price_duration_columns
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -149,6 +149,10 @@ if 'analysis_results' not in st.session_state:
     st.session_state.analysis_results = None
 if 'competitor_name' not in st.session_state:
     st.session_state.competitor_name = ""
+if 'course_name' not in st.session_state:
+    st.session_state.course_name = ""
+if 'website_link' not in st.session_state:
+    st.session_state.website_link = ""
 if 'master_file_updated' not in st.session_state:
     st.session_state.master_file_updated = False
 
@@ -160,6 +164,7 @@ MASTER_DIR = "src/data/master"
 BASE_MASTER_FILENAME = "Agentic AI Course Content Competition Analysis.xlsx"
 MASTER_FILE_PATH = "src/data/master/Agentic AI Course Content Competition Analysis.xlsx"
 TOPICS_JSON_PATH = "src/data/topics.json"
+COLUMNS_JSON_PATH = "src/data/price_duration_columns.json"
 
 def get_latest_master_file():
     """Finds the latest version of the master file based on modification time."""
@@ -190,7 +195,10 @@ def get_next_version_path(current_path):
 # --- RESULTS VIEW ---
 # --- RESULTS VIEW ---
 if st.session_state.analysis_results:
-    st.success(f"✅ Preparing Report for {st.session_state.competitor_name}")
+    competitor_display = st.session_state.competitor_name
+    if st.session_state.get("course_name"):
+        competitor_display += f" - {st.session_state.course_name}"
+    st.success(f"✅ Preparing Report for {competitor_display}")
     
     # Action Buttons (Top)
     b_col1, b_col2 = st.columns([1, 4])
@@ -198,6 +206,8 @@ if st.session_state.analysis_results:
         if st.button("⬅️ Start New Analysis"):
             st.session_state.analysis_results = None
             st.session_state.competitor_name = ""
+            st.session_state.course_name = ""
+            st.session_state.website_link = ""
             st.session_state.master_file_updated = False
             st.rerun()
             
@@ -296,7 +306,10 @@ if st.session_state.analysis_results:
                             updated_bytes = update_excel_with_analysis(
                                 target_path, 
                                 st.session_state.analysis_results, 
-                                st.session_state.competitor_name
+                                st.session_state.competitor_name,
+                                course_name=st.session_state.get("course_name"),
+                                website_link=st.session_state.get("website_link"),
+                                extracted_info=st.session_state.get("extracted_info")
                             )
                             with open(target_path, "wb") as f:
                                 f.write(updated_bytes)
@@ -372,7 +385,11 @@ else:
     with col1:
         st.markdown('<div class="card"><h4>📁 Input Phase</h4></div>', unsafe_allow_html=True)
         
-        competitor_name = st.text_input("Competitor Name", placeholder="e.g. Udacity, Coursera, etc.")
+        competitor_name = st.text_input("Competitor Name (Provider)", placeholder="e.g. Udacity, Coursera, etc.")
+        
+        course_name = st.text_input("Course Name", placeholder="e.g. AI Engineering Program, etc.")
+        
+        website_link = st.text_input("Website Link *", placeholder="https://competitor.com/course", help="Required field")
         
         st.divider()
         
@@ -382,7 +399,7 @@ else:
         if evidence_type == "PDF Brochure":
             competitor_evidence = st.file_uploader("Upload Competitor PDF", type=["pdf"])
         elif evidence_type == "Website URL":
-            competitor_evidence = st.text_input("Enter Website URL", placeholder="https://competitor.com/course")
+            competitor_evidence = st.text_input("Enter Website URL for Content Extraction", placeholder="https://competitor.com/course")
         else:
             competitor_evidence = st.text_area("Paste Competitor Content", height=200, placeholder="Paste the curriculum text here...")
 
@@ -400,8 +417,14 @@ else:
                 st.error(f"Master file not found in {MASTER_DIR}. Please ensure '{BASE_MASTER_FILENAME}' exists.")
             elif not os.path.exists(TOPICS_JSON_PATH):
                  st.error(f"Topics JSON not found at {TOPICS_JSON_PATH}. Please run regeneration script.")
+            elif not os.path.exists(COLUMNS_JSON_PATH):
+                 st.error(f"Columns JSON not found at {COLUMNS_JSON_PATH}. Please run: uv run python src/utils/generate_columns_json.py")
             elif not competitor_name:
                 st.error("Please enter a Competitor Name.")
+            elif not course_name:
+                st.error("Please enter a Course Name.")
+            elif not website_link:
+                st.error("Please enter a Website Link.")
             elif not competitor_evidence:
                 st.error("Please provide competitor evidence.")
             elif not gemini_key:
@@ -456,12 +479,68 @@ else:
                             status.update(label=" Processing!", state="complete", expanded=False)
                         
                         logger.info("Gemini analysis complete.")
+                        
+                        # 3.5. Extract Price/Duration information from website
+                        extracted_info = None
+                        if website_link:
+                            try:
+                                with st.status("Extracting Price/Duration Information...", expanded=True) as status:
+                                    st.write("Loading column definitions...")
+                                    
+                                    # Load columns from JSON
+                                    with open(COLUMNS_JSON_PATH, 'r') as f:
+                                        columns = json.load(f)
+                                    st.write(f"Loaded {len(columns)} column definitions.")
+                                    
+                                    # Extract website content
+                                    st.write(f"Fetching content from {website_link}...")
+                                    website_content = extract_from_url(website_link)
+                                    
+                                    if len(website_content) < 50:
+                                        st.warning("Website content seems too short. Extraction may be incomplete.")
+                                    else:
+                                        st.write(f"Extracted {len(website_content)} characters from website.")
+                                    
+                                    # Extract information using LLM
+                                    st.write("Using AI to extract structured information...")
+                                    
+                                    def extract_log_callback(msg):
+                                        st.write(msg)
+                                    
+                                    extracted_info = extract_price_duration_info(
+                                        website_link,
+                                        website_content,
+                                        columns,
+                                        gemini_key,
+                                        model_name=selected_model,
+                                        log_callback=extract_log_callback
+                                    )
+                                    
+                                    status.update(label="✅ Extraction Complete!", state="complete", expanded=False)
+                                    st.success(f"✅ Extracted information for {len(extracted_info)} fields")
+                                    
+                            except PriceDurationExtractionError as e:
+                                st.error(f"⚠️ Price/Duration Extraction Error: {e}")
+                                logger.error(f"Price/Duration extraction failed: {e}")
+                                # Continue with analysis even if extraction fails
+                            except Exception as e:
+                                st.warning(f"⚠️ Could not extract price/duration info: {e}")
+                                logger.warning(f"Price/Duration extraction error: {e}")
+                                # Continue with analysis even if extraction fails
                          
                         # 4. Prepare Download & Update
                         logger.info(f"Updating Excel file: {current_master_path}")
+                        logger.info(f"extracted_info being passed: {extracted_info}")
                         
                         # Use path-based update to preserve comments
-                        updated_excel_bytes = update_excel_with_analysis(current_master_path, analysis_results, competitor_name)
+                        updated_excel_bytes = update_excel_with_analysis(
+                            current_master_path, 
+                            analysis_results, 
+                            competitor_name,
+                            course_name=course_name,
+                            website_link=website_link,
+                            extracted_info=extracted_info
+                        )
                         
                         # Determine New Version Path
                         new_master_path = get_next_version_path(current_master_path)
@@ -475,6 +554,9 @@ else:
                             st.session_state.master_file_updated = True
                             st.session_state.analysis_results = analysis_results
                             st.session_state.competitor_name = competitor_name
+                            st.session_state.course_name = course_name
+                            st.session_state.website_link = website_link
+                            st.session_state.extracted_info = extracted_info
                             st.session_state.last_updated_master_path = new_master_path # Store for download
                             
                             status.update(label="Processing!", state="complete", expanded=False)

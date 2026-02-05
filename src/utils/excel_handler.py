@@ -1,5 +1,8 @@
 import pandas as pd
 import io
+import logging
+
+logger = logging.getLogger(__name__)
 
 def load_master_topics(file):
     """
@@ -17,6 +20,39 @@ def load_master_topics(file):
     # Filter out empty topics (common with merged cells if logic relies on Column B)
     topics = df['Topic'].dropna().unique().tolist()
     return topics, df
+
+def get_price_duration_columns(file_path):
+    """
+    Extracts column titles from the 'Price, Duration, Projects' sheet.
+    Returns a list of column names from row 1.
+    """
+    try:
+        wb = openpyxl.load_workbook(file_path, read_only=True)
+        if "Price, Duration, Projects" not in wb.sheetnames:
+            wb.close()
+            return []
+        
+        ws = wb["Price, Duration, Projects"]
+        columns = []
+        
+        # Read row 1 to get column titles (read up to max_column)
+        for col_idx in range(1, ws.max_column + 1):
+            cell = ws.cell(row=1, column=col_idx)
+            if cell.value:
+                columns.append(str(cell.value).strip())
+            else:
+                columns.append(None)  # Keep track of empty columns too
+        
+        wb.close()
+        return columns
+    except Exception as e:
+        # Use basic print if logging not available
+        try:
+            logger = logging.getLogger(__name__)
+            logger.warning(f"Failed to extract columns from 'Price, Duration, Projects' sheet: {e}")
+        except:
+            print(f"Warning: Failed to extract columns from 'Price, Duration, Projects' sheet: {e}")
+        return []
 
 import openpyxl
 from openpyxl.comments import Comment
@@ -36,7 +72,7 @@ def copy_cell_style(source_cell, target_cell):
         target_cell.protection = copy(source_cell.protection)
         target_cell.alignment = copy(source_cell.alignment)
 
-def update_excel_with_analysis(source_file_path, analysis_results, competitor_name):
+def update_excel_with_analysis(source_file_path, analysis_results, competitor_name, course_name=None, website_link=None, extracted_info=None):
     """
     Updates the Excel file with analysis results using openpyxl to preserve existing comments and formatting.
     Returns the saved workbook as bytes.
@@ -187,8 +223,100 @@ def update_excel_with_analysis(source_file_path, analysis_results, competitor_na
         if reasoning:
             # Note: openpyxl comments need an Author.
             target_cell.comment = Comment(reasoning, "AgenticAI")
+    
+    # 5. Update 'Price, Duration, Projects' sheet if data provided
+    # Always update if we have course_name or website_link (even if extracted_info is None)
+    logger.info(f"Checking Price sheet update: sheet exists={('Price, Duration, Projects' in wb.sheetnames)}, course_name={course_name}, website_link={website_link}, extracted_info={extracted_info}")
+    if "Price, Duration, Projects" in wb.sheetnames and (course_name or website_link or extracted_info):
+        logger.info("Updating 'Price, Duration, Projects' sheet...")
+        ws_pdp = wb["Price, Duration, Projects"]
+        
+        # Find or create row for this competitor
+        target_row_idx = None
+        is_new_row = False
+        
+        # Check if row already exists (match by Provider and Course Name)
+        for row_idx, row in enumerate(ws_pdp.iter_rows(min_row=2, values_only=False), start=2):
+            provider_cell = row[0]  # Column 1: Provider
+            course_cell = row[1]    # Column 2: Course Name
             
-    # 5. Save to Bytes
+            if (provider_cell.value == competitor_name and 
+                course_cell.value == course_name):
+                target_row_idx = row_idx
+                break
+        
+        # If not found, append new row
+        if not target_row_idx:
+            target_row_idx = ws_pdp.max_row + 1
+            is_new_row = True
+        
+        # Get column titles to map data dynamically
+        columns = get_price_duration_columns(source_file_path)
+        
+        # Create a mapping of column name to index
+        column_map = {}
+        for idx, col_name in enumerate(columns, start=1):
+            if col_name:
+                column_map[col_name.lower()] = idx
+        
+        # Find a reference row to copy styles from (use row 2 if it exists)
+        reference_row_idx = 2 if ws_pdp.max_row >= 2 else None
+        
+        # Write data based on column mapping
+        # Provider (Column 1 or based on "Provider" header)
+        provider_col = column_map.get("provider", 1)
+        cell = ws_pdp.cell(row=target_row_idx, column=provider_col)
+        
+        # Copy style from reference row if new row
+        if is_new_row and reference_row_idx:
+            ref_cell = ws_pdp.cell(row=reference_row_idx, column=provider_col)
+            copy_cell_style(ref_cell, cell)
+        
+        cell.value = competitor_name
+        
+        # Course Name (Column 2 or based on "Course Name" header)
+        if course_name:
+            course_col = column_map.get("course name", 2)
+            cell = ws_pdp.cell(row=target_row_idx, column=course_col)
+            
+            # Copy style from reference row if new row
+            if is_new_row and reference_row_idx:
+                ref_cell = ws_pdp.cell(row=reference_row_idx, column=course_col)
+                copy_cell_style(ref_cell, cell)
+            
+            cell.value = course_name
+        
+        # Website Link (Column 9 or based on "Website Link" header)
+        if website_link:
+            website_col = column_map.get("website link", 9)
+            cell = ws_pdp.cell(row=target_row_idx, column=website_col)
+            
+            # Copy style from reference row if new row
+            if is_new_row and reference_row_idx:
+                ref_cell = ws_pdp.cell(row=reference_row_idx, column=website_col)
+                copy_cell_style(ref_cell, cell)
+            
+            cell.value = website_link
+        
+        # Write extracted information (Price, Duration, Projects, etc.)
+        if extracted_info:
+            logger.info(f"Writing extracted_info to row {target_row_idx}: {extracted_info}")
+            for col_name, value in extracted_info.items():
+                col_idx = column_map.get(col_name.lower())
+                if col_idx:
+                    cell = ws_pdp.cell(row=target_row_idx, column=col_idx)
+                    
+                    # Copy style from reference row if new row
+                    if is_new_row and reference_row_idx:
+                        ref_cell = ws_pdp.cell(row=reference_row_idx, column=col_idx)
+                        copy_cell_style(ref_cell, cell)
+                    
+                    cell.value = value
+                    logger.info(f"  Written {col_name} = {value} to column {col_idx}")
+                else:
+                    logger.warning(f"  Column '{col_name}' not found in column_map. Available columns: {list(column_map.keys())}")
+            
+    # 6. Save to Bytes
     output = io.BytesIO()
     wb.save(output)
     return output.getvalue()

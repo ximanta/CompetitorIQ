@@ -21,6 +21,10 @@ class AIAnalysisError(Exception):
     """Custom exception for AI analysis failures after retries."""
     pass
 
+class PriceDurationExtractionError(Exception):
+    """Custom exception for price/duration extraction failures."""
+    pass
+
 def analyze_topics(topics, context, api_key, model_name=None, log_callback=None):
     """
     Analyzes topics against competitor context using Gemini with Structured Output.
@@ -219,3 +223,131 @@ Yes, No, or Unsure.
          raise AIAnalysisError(friendly_msg) from last_exception
          
     raise AIAnalysisError(error_msg) from last_exception
+
+class PriceDurationExtractionError(Exception):
+    """Custom exception for price/duration extraction failures."""
+    pass
+
+def extract_price_duration_info(website_url, website_content, columns, api_key, model_name=None, log_callback=None):
+    """
+    Extracts price, duration, projects, and other information from website content using Gemini.
+    Returns a dictionary mapping column names to extracted values.
+    
+    Args:
+        website_url: The URL of the website
+        website_content: The scraped text content from the website
+        columns: List of column names to extract (e.g., ['Price', 'Duration', 'Projects', ...])
+        api_key: Gemini API key
+        model_name: Optional model name override
+        log_callback: Optional callback function for logging
+    
+    Returns:
+        Dictionary mapping column names to extracted values
+    """
+    genai.configure(api_key=api_key)
+    
+    if not log_callback:
+        log_callback = lambda x: None # No-op
+    
+    # Priority: Model arg > Env PRO > Env LITE > Default
+    if not model_name:
+        model_name = os.getenv("GEMINI_PRO")
+        if not model_name:
+            model_name = os.getenv("GEMINI_LITE", "gemini-2.5-flash")
+    
+    logger.info(f"Using Gemini Model: {model_name} for price/duration extraction")
+    log_callback(f"🔍 Extracting information using **{model_name}**")
+    
+    model = genai.GenerativeModel(model_name)
+    
+    # Filter out Provider, Course Name, Website Link from extraction (these are user inputs)
+    columns_to_extract = [col for col in columns if col.lower() not in ['provider', 'course name', 'website link', 'remarks']]
+    columns_json = json.dumps(columns_to_extract)
+    
+    prompt = f"""
+## SYSTEM
+You are an expert at extracting structured information from course/educational program websites.
+
+### Task
+Extract specific information from the provided website content. The website URL is: {website_url}
+
+### Columns to Extract
+{columns_json}
+
+### Instructions
+1. Extract information for each column listed above.
+2. For "Price": Look for course fees, pricing, cost, subscription fees, etc. Include currency if mentioned.
+3. For "Duration": Look for course duration, length, time to complete, hours, weeks, months, etc.
+4. For "Projects": Look for number of projects, capstone projects, hands-on projects, assignments, etc.
+5. For "Additional Services": Look for career support, mentorship, certification, job assistance, etc.
+6. For "Eligibility Criteria": Look for prerequisites, requirements, eligibility, who can enroll, etc.
+7. If information is not found for a column, use "Not specified" or "N/A".
+8. Be precise and extract exact values when possible (e.g., "$999", "6 months", "5 projects").
+
+### Output Format
+Output MUST be a valid JSON object where keys are column names and values are the extracted information.
+
+Example:
+{{
+  "Price": "$999 or INR 82,000",
+  "Duration": "6 months",
+  "Projects": "5 hands-on projects",
+  "Additional Services": "Career support, 1-on-1 mentorship",
+  "Eligibility Criteria": "Basic programming knowledge required"
+}}
+
+### Website Content:
+{website_content[:10000]}  # Limit content to avoid token limits
+"""
+    
+    max_retries = 2
+    last_exception = None
+    
+    for attempt in range(max_retries):
+        try:
+            logger.info(f"Price/Duration Extraction Attempt {attempt + 1}/{max_retries}")
+            log_callback(f"🔄 Extraction Attempt {attempt + 1}/{max_retries}...")
+            
+            response = model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    response_mime_type="application/json",
+                    temperature=0.1
+                )
+            )
+            
+            # Parse JSON response
+            extracted_data = json.loads(response.text)
+            log_callback(f"✅ Successfully extracted information for {len(extracted_data)} fields")
+            
+            # Ensure all requested columns are present (fill with "Not specified" if missing)
+            result = {}
+            for col in columns_to_extract:
+                result[col] = extracted_data.get(col, "Not specified")
+            
+            return result
+            
+        except Exception as e:
+            logger.warning(f"Extraction attempt {attempt + 1} failed: {e}")
+            last_exception = e
+            
+            if "429" in str(e) or "Quota exceeded" in str(e):
+                logger.error("Quota exceeded. Waiting before retry...")
+                time.sleep(5)
+            else:
+                time.sleep(2)
+    
+    # If we exit the loop, we failed all retries
+    error_msg = f"Price/Duration extraction failed after {max_retries} attempts. Last error: {last_exception}"
+    
+    if last_exception and ("429" in str(last_exception) or "Quota exceeded" in str(last_exception)):
+        friendly_msg = (
+            f"**Gemini Quota Exceeded for {model_name}**\n\n"
+            "You have hit the free tier limit. Please:\n"
+            "1. Wait a minute and try again.\n"
+            "2. Switch to **gemini-2.5-flash** (it has higher limits).\n"
+            "3. Or use a paid API key."
+        )
+        raise PriceDurationExtractionError(friendly_msg) from last_exception
+    
+    raise PriceDurationExtractionError(error_msg) from last_exception
