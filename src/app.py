@@ -368,6 +368,16 @@ if st.session_state.analysis_results:
         price_row.update(st.session_state.extracted_info or {})
         
         price_df = pd.DataFrame([price_row])
+        
+        # Hide the CSV download toolbar for this (and any other) dataframes
+        st.markdown(
+            """
+            <style>
+            div[data-testid="stElementToolbar"] {display: none !important;}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
         st.dataframe(price_df, use_container_width=True)
 
 # --- INPUT VIEW ---
@@ -409,20 +419,36 @@ else:
         competitor_evidence = None
         website_link = None
         
+        # Validation Helper
+        is_url_valid = True
+        def validate_url(url):
+            if url:
+                parsed = urllib.parse.urlparse(url)
+                if not (parsed.scheme in ['http', 'https'] and parsed.netloc):
+                    st.error("Please enter a valid Website Link (must start with http:// or https://).")
+                    return False
+            return True
+
         if evidence_type == "PDF Brochure":
             website_link = st.text_input("Website Link (where you downloaded the brochure)", placeholder="https://competitor.com/course", help="Enter the website URL where you downloaded this PDF brochure")
+            if not validate_url(website_link): is_url_valid = False
             competitor_evidence = st.file_uploader("Upload Competitor PDF", type=["pdf"])
         elif evidence_type == "Website URL":
             competitor_evidence = st.text_input("Enter Website URL for Content Extraction", placeholder="https://competitor.com/course")
             website_link = competitor_evidence  # For website source, the URL itself is the website link
+            if not validate_url(website_link): is_url_valid = False
         else:  # Paste Text
             website_link = st.text_input("Website Link (source of this text)", placeholder="https://competitor.com/course", help="Enter the website URL where you got this text from")
+            if not validate_url(website_link): is_url_valid = False
             competitor_evidence = st.text_area("Paste Competitor Content", height=200, placeholder="Paste the curriculum text here...")
-
     with col2:
         st.markdown('<div class="card"><h4>🛰️ Analysis Status</h4></div>', unsafe_allow_html=True)
-        
-        if st.button("Start Analysis"): 
+
+        # State for missing-website confirmation when using PDF/Text
+        if "confirm_missing_website" not in st.session_state:
+            st.session_state.confirm_missing_website = False
+
+        def perform_analysis():
             # Determine effective API Key
             gemini_key = gemini_key_input if gemini_key_input else os.getenv("GEMINI_KEY")
             
@@ -435,180 +461,209 @@ else:
                 try:
                     parsed_url = urllib.parse.urlparse(website_link)
                     domain = parsed_url.netloc
-                    # Remove www. prefix if present
                     if domain.startswith('www.'):
                         domain = domain[4:]
-                    # Extract main domain name (e.g., 'coursera.org' -> 'Coursera')
                     domain_parts = domain.split('.')
                     if len(domain_parts) > 0:
                         competitor_name = domain_parts[0].capitalize()
                 except:
                     pass
             
-            # Fallback to course name if competitor name extraction failed
             if not competitor_name:
                 competitor_name = course_name if course_name else "Unknown Provider"
-            
+
+            with st.spinner(f"Analyzing {competitor_name}..."):
+                try:
+                    # 1. Load Topics from JSON (Fast)
+                    logger.info("Loading topics from JSON...")
+                    with open(TOPICS_JSON_PATH, 'r') as f:
+                        topics = json.load(f)
+                    st.success(f"Loaded {len(topics)} topics from Cache.")
+                    
+                    # 2. Extract Text
+                    logger.info(f"Extracting content from {evidence_type}...")
+                    st.info("Processing evidence...")
+                    
+                    extracted_text = ""
+                    if evidence_type == "PDF Brochure":
+                        extracted_text = extract_from_pdf(competitor_evidence)
+                    elif evidence_type == "Website URL":
+                        extracted_text = extract_from_url(competitor_evidence)
+                    else:
+                        extracted_text = competitor_evidence  # Direct text
+                    
+                    logger.info(f"Extracted {len(extracted_text)} characters.")
+                    
+                    if len(extracted_text) < 50:
+                        logger.warning("Extracted text is very short.")
+                        st.warning("Extracted text seems too short. Check your evidence source.")
+                        st.text(f"Snippet: {extracted_text[:100]}...")
+                    
+                    # 3. AI Analysis
+                    with st.status("Running Analysis...", expanded=True) as status:
+                        st.write("Initializing AI Engine...")
+                        
+                        def log_callback(msg):
+                            st.write(msg)
+                        
+                        from utils.ai_engine import AIAnalysisError
+                        
+                        analysis_results = analyze_topics(
+                            topics,
+                            extracted_text,
+                            gemini_key,
+                            model_name=selected_model,
+                            log_callback=log_callback
+                        )
+                        
+                        status.update(label=" Processing!", state="complete", expanded=False)
+                    
+                    logger.info("Gemini analysis complete.")
+                    
+                    # 3.5. Extract Price/Duration information from website
+                    extracted_info = None
+                    if website_link:
+                        try:
+                            with st.status("Extracting Price/Duration Information...", expanded=True) as status:
+                                st.write("Loading column definitions...")
+                                
+                                with open(COLUMNS_JSON_PATH, 'r') as f:
+                                    columns = json.load(f)
+                                st.write(f"Loaded {len(columns)} column definitions.")
+                                
+                                st.write(f"Fetching content from {website_link}...")
+                                website_content = extract_from_url(website_link)
+                                
+                                if len(website_content) < 50:
+                                    st.warning("Website content seems too short. Extraction may be incomplete.")
+                                else:
+                                    st.write(f"Extracted {len(website_content)} characters from website.")
+                                
+                                st.write("Using AI to extract structured information...")
+                                
+                                def extract_log_callback(msg):
+                                    st.write(msg)
+                                
+                                extracted_info = extract_price_duration_info(
+                                    website_link,
+                                    website_content,
+                                    columns,
+                                    gemini_key,
+                                    model_name=selected_model,
+                                    log_callback=extract_log_callback,
+                                    course_name=course_name
+                                )
+                                
+                                status.update(label="✅ Extraction Complete!", state="complete", expanded=False)
+                                st.success(f"✅ Extracted information for {len(extracted_info)} fields")
+                                
+                        except PriceDurationExtractionError as e:
+                            st.error(f"⚠️ Price/Duration Extraction Error: {e}")
+                            logger.error(f"Price/Duration extraction failed: {e}")
+                        except Exception as e:
+                            st.warning(f"⚠️ Could not extract price/duration info: {e}")
+                            logger.warning(f"Price/Duration extraction error: {e}")
+                    
+                    # 4. Prepare Download & Update
+                    logger.info(f"Updating Excel file: {current_master_path}")
+                    logger.info(f"extracted_info being passed: {extracted_info}")
+                    
+                    updated_excel_bytes = update_excel_with_analysis(
+                        current_master_path,
+                        analysis_results,
+                        competitor_name,
+                        course_name=course_name,
+                        website_link=website_link,
+                        extracted_info=extracted_info
+                    )
+                    
+                    new_master_path = get_next_version_path(current_master_path)
+                    
+                    try:
+                        with open(new_master_path, "wb") as f:
+                            f.write(updated_excel_bytes)
+                        
+                        logger.info(f"Saved new version: {new_master_path}")
+                        st.session_state.master_file_updated = True
+                        st.session_state.analysis_results = analysis_results
+                        st.session_state.competitor_name = competitor_name
+                        st.session_state.course_name = course_name
+                        st.session_state.website_link = website_link
+                        st.session_state.extracted_info = extracted_info
+                        st.session_state.last_updated_master_path = new_master_path
+                        
+                        status.update(label="Processing!", state="complete", expanded=False)
+                        st.success(f"✅ Analysis Complete! Saved as: {os.path.basename(new_master_path)}")
+                        st.rerun()
+                    
+                    except PermissionError:
+                        msg = f"PERMISSION DENIED: Could not write to '{new_master_path}'. Is the file open in Excel?"
+                        logger.error(msg)
+                        st.error("⚠️ Permission issue encountered. Please ensure master excel is not open at your end")
+                    except Exception as e:
+                        logger.error(f"Failed to save Master Excel: {e}")
+                        st.error(f"⚠️ Error saving file: {e}")
+                
+                except Exception as e:
+                    st.error(f"An error occurred: {e}")
+                    logger.error(f"Application Error: {e}")
+
+        start_clicked = st.button("Start Analysis")
+
+        # Check if this is a continuation from the Proceed button
+        is_continuation = st.session_state.get("trigger_analysis_continuation", False)
+
+        if start_clicked or is_continuation:
+            # Reset the continuation flag immediately to avoid sticky state
+            if is_continuation:
+                st.session_state.trigger_analysis_continuation = False
+                
+            gemini_key = gemini_key_input if gemini_key_input else os.getenv("GEMINI_KEY")
+            current_master_path = get_latest_master_file()
+
             if not current_master_path or not os.path.exists(current_master_path):
                 st.error(f"Master file not found in {MASTER_DIR}. Please ensure '{BASE_MASTER_FILENAME}' exists.")
             elif not os.path.exists(TOPICS_JSON_PATH):
-                 st.error(f"Topics JSON not found at {TOPICS_JSON_PATH}. Please run regeneration script.")
+                st.error(f"Topics JSON not found at {TOPICS_JSON_PATH}. Please run regeneration script.")
             elif not os.path.exists(COLUMNS_JSON_PATH):
-                 st.error(f"Columns JSON not found at {COLUMNS_JSON_PATH}. Please run: uv run python src/utils/generate_columns_json.py")
+                st.error(f"Columns JSON not found at {COLUMNS_JSON_PATH}. Please run: uv run python src/utils/generate_columns_json.py")
             elif not course_name:
                 st.error("Please enter a Course Name.")
-            elif not website_link:
+            elif evidence_type == "Website URL" and not website_link:
                 st.error("Please enter a Website Link.")
             elif not competitor_evidence:
                 st.error("Please provide competitor evidence.")
             elif not gemini_key:
                 st.error("Gemini API Key is required. Please paste it in the sidebar or set GEMINI_KEY in .env.")
             else:
-                with st.spinner(f"Analyzing {competitor_name}..."):
-                    try:
-                        # 1. Load Topics from JSON (Fast)
-                        logger.info("Loading topics from JSON...")
-                        with open(TOPICS_JSON_PATH, 'r') as f:
-                            topics = json.load(f)
-                        st.success(f"Loaded {len(topics)} topics from Cache.")
-                        
-                        # 2. Extract Text
-                        logger.info(f"Extracting content from {evidence_type}...")
-                        st.info("Processing evidence...")
-                        
-                        extracted_text = ""
-                        if evidence_type == "PDF Brochure":
-                            extracted_text = extract_from_pdf(competitor_evidence)
-                        elif evidence_type == "Website URL":
-                            extracted_text = extract_from_url(competitor_evidence)
-                        else:
-                            extracted_text = competitor_evidence # Direct text
-                        
-                        logger.info(f"Extracted {len(extracted_text)} characters.")
-                        
-                        if len(extracted_text) < 50:
-                            logger.warning("Extracted text is very short.")
-                            st.warning("Extracted text seems too short. Check your evidence source.")
-                            st.text(f"Snippet: {extracted_text[:100]}...")
-                        
-                        # 3. AI Analysis
-                        # Logs Container
-                        with st.status("Running Analysis...", expanded=True) as status:
-                            st.write("Initializing AI Engine...")
-                            
-                            def log_callback(msg):
-                                st.write(msg)
-                                
-                            # Import specifically here or at top
-                            from utils.ai_engine import AIAnalysisError
-                             
-                            analysis_results = analyze_topics(
-                                topics, 
-                                extracted_text, 
-                                gemini_key, 
-                                model_name=selected_model,
-                                log_callback=log_callback
-                            )
-                            
-                            status.update(label=" Processing!", state="complete", expanded=False)
-                        
-                        logger.info("Gemini analysis complete.")
-                        
-                        # 3.5. Extract Price/Duration information from website
-                        extracted_info = None
-                        if website_link:
-                            try:
-                                with st.status("Extracting Price/Duration Information...", expanded=True) as status:
-                                    st.write("Loading column definitions...")
-                                    
-                                    # Load columns from JSON
-                                    with open(COLUMNS_JSON_PATH, 'r') as f:
-                                        columns = json.load(f)
-                                    st.write(f"Loaded {len(columns)} column definitions.")
-                                    
-                                    # Extract website content
-                                    st.write(f"Fetching content from {website_link}...")
-                                    website_content = extract_from_url(website_link)
-                                    
-                                    if len(website_content) < 50:
-                                        st.warning("Website content seems too short. Extraction may be incomplete.")
-                                    else:
-                                        st.write(f"Extracted {len(website_content)} characters from website.")
-                                    
-                                    # Extract information using LLM
-                                    st.write("Using AI to extract structured information...")
-                                    
-                                    def extract_log_callback(msg):
-                                        st.write(msg)
-                                    
-                                    extracted_info = extract_price_duration_info(
-                                        website_link,
-                                        website_content,
-                                        columns,
-                                        gemini_key,
-                                        model_name=selected_model,
-                                        log_callback=extract_log_callback,
-                                        course_name=course_name
-                                    )
-                                    
-                                    status.update(label="✅ Extraction Complete!", state="complete", expanded=False)
-                                    st.success(f"✅ Extracted information for {len(extracted_info)} fields")
-                                    
-                            except PriceDurationExtractionError as e:
-                                st.error(f"⚠️ Price/Duration Extraction Error: {e}")
-                                logger.error(f"Price/Duration extraction failed: {e}")
-                                # Continue with analysis even if extraction fails
-                            except Exception as e:
-                                st.warning(f"⚠️ Could not extract price/duration info: {e}")
-                                logger.warning(f"Price/Duration extraction error: {e}")
-                                # Continue with analysis even if extraction fails
-                         
-                        # 4. Prepare Download & Update
-                        logger.info(f"Updating Excel file: {current_master_path}")
-                        logger.info(f"extracted_info being passed: {extracted_info}")
-                        
-                        # Use path-based update to preserve comments
-                        updated_excel_bytes = update_excel_with_analysis(
-                            current_master_path, 
-                            analysis_results, 
-                            competitor_name,
-                            course_name=course_name,
-                            website_link=website_link,
-                            extracted_info=extracted_info
-                        )
-                        
-                        # Determine New Version Path
-                        new_master_path = get_next_version_path(current_master_path)
-                        
-                        # Save to NEW version path
-                        try:
-                            with open(new_master_path, "wb") as f:
-                                f.write(updated_excel_bytes)
-                            
-                            logger.info(f"Saved new version: {new_master_path}")
-                            st.session_state.master_file_updated = True
-                            st.session_state.analysis_results = analysis_results
-                            st.session_state.competitor_name = competitor_name
-                            st.session_state.course_name = course_name
-                            st.session_state.website_link = website_link
-                            st.session_state.extracted_info = extracted_info
-                            st.session_state.last_updated_master_path = new_master_path # Store for download
-                            
-                            status.update(label="Processing!", state="complete", expanded=False)
-                            st.success(f"✅ Analysis Complete! Saved as: {os.path.basename(new_master_path)}")
-                            st.rerun() # Trigger refresh to show results view
-                            
-                        except PermissionError:
-                            msg = f"PERMISSION DENIED: Could not write to '{new_master_path}'. Is the file open in Excel?"
-                            logger.error(msg)
-                            st.error("⚠️ Permission issue encountered. Please ensure master excel is not open at your end")
-                        except Exception as e:
-                            logger.error(f"Failed to save Master Excel: {e}")
-                            st.error(f"⚠️ Error saving file: {e}")
-                        
-                    except Exception as e:
-                        st.error(f"An error occurred: {e}")
-                        logger.error(f"Application Error: {e}")
+                # If PDF/Text source and website link is empty, set confirmation flag
+                # BUT skip this check if the user just clicked "Proceed" (is_continuation is True)
+                if evidence_type in ["PDF Brochure", "Paste Text"] and not website_link and not is_continuation:
+                    st.session_state.confirm_missing_website = True
+                elif not is_url_valid:
+                     st.error("Please fix the errors above before proceeding.")
+                else:
+                    perform_analysis()
+
+        # Show confirmation popup when needed
+        if st.session_state.confirm_missing_website:
+            st.warning(
+                "Currently your source website link of your PDF is empty.\n"
+                "You might need to manually fill your analysis sheet with information below if empty:\n\n"
+                "- Price\n"
+                "- Duration\n"
+                "- Price/Week\n"
+                "- Projects and Additional Services\n"
+                "- Eligibility Criteria"
+            )
+
+            # Use columns to position the button on the right - gave it more space [3, 1]
+            _, c_right = st.columns([3, 1]) 
+            with c_right:
+                if st.button("Proceed", key="confirm_no_website_proceed"):
+                    st.session_state.confirm_missing_website = False
+                    st.session_state.trigger_analysis_continuation = True
+                    st.rerun()
 
 # Footer
 st.markdown("---")
