@@ -88,10 +88,11 @@ def update_excel_with_analysis(source_file_path, analysis_results, competitor_na
     # 1. Determine Target Column (Update existing or Append new)
     target_col_idx = None
     is_new_column = False
+    column_header = f"{course_name} by {competitor_name}" if course_name else competitor_name
     
     # Check if header already exists (Row 1)
     for cell in ws[1]:
-        if cell.value == competitor_name:
+        if cell.value == column_header:
             target_col_idx = cell.column
             break
             
@@ -139,7 +140,7 @@ def update_excel_with_analysis(source_file_path, analysis_results, competitor_na
         copy_cell_style(reference_header, header_cell)
     # If updating existing column, preserve its existing style (don't overwrite)
     
-    header_cell.value = competitor_name
+    header_cell.value = column_header
     
     # 4. Iterate rows and populate data
     # We assume Column B (index 2) contains the Topics as per spec

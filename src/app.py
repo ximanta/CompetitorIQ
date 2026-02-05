@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import logging
 import time
+import urllib.parse
 from utils.extraction import extract_from_pdf, extract_from_url
 from utils.ai_engine import analyze_topics, extract_price_duration_info, PriceDurationExtractionError
 from utils.excel_handler import load_master_topics, update_excel_with_analysis, get_price_duration_columns
@@ -352,8 +353,22 @@ if st.session_state.analysis_results:
                     st.rerun()
             
             st.divider()
-                
-
+    
+    # 3. Show Price / Duration / Projects sheet details (single-row view)
+    if st.session_state.get("extracted_info") is not None:
+        st.subheader("Price / Duration / Projects Details")
+        st.info("These details come from the 'Price, Duration, Projects' sheet for this course.")
+        
+        price_row = {
+            "Provider": st.session_state.competitor_name,
+            "Course Name": st.session_state.course_name,
+            "Website Link": st.session_state.website_link,
+        }
+        # Merge dynamic extracted fields (Price, Duration, Price/Week, Projects, etc.)
+        price_row.update(st.session_state.extracted_info or {})
+        
+        price_df = pd.DataFrame([price_row])
+        st.dataframe(price_df, use_container_width=True)
 
 # --- INPUT VIEW ---
 else:
@@ -385,22 +400,23 @@ else:
     with col1:
         st.markdown('<div class="card"><h4>📁 Input Phase</h4></div>', unsafe_allow_html=True)
         
-        competitor_name = st.text_input("Competitor Name (Provider)", placeholder="e.g. Udacity, Coursera, etc.")
-        
         course_name = st.text_input("Course Name", placeholder="e.g. AI Engineering Program, etc.")
-        
-        website_link = st.text_input("Website Link *", placeholder="https://competitor.com/course", help="Required field")
         
         st.divider()
         
         evidence_type = st.radio("Competitor Evidence Source", ["PDF Brochure", "Website URL", "Paste Text"])
         
         competitor_evidence = None
+        website_link = None
+        
         if evidence_type == "PDF Brochure":
+            website_link = st.text_input("Website Link (where you downloaded the brochure)", placeholder="https://competitor.com/course", help="Enter the website URL where you downloaded this PDF brochure")
             competitor_evidence = st.file_uploader("Upload Competitor PDF", type=["pdf"])
         elif evidence_type == "Website URL":
             competitor_evidence = st.text_input("Enter Website URL for Content Extraction", placeholder="https://competitor.com/course")
-        else:
+            website_link = competitor_evidence  # For website source, the URL itself is the website link
+        else:  # Paste Text
+            website_link = st.text_input("Website Link (source of this text)", placeholder="https://competitor.com/course", help="Enter the website URL where you got this text from")
             competitor_evidence = st.text_area("Paste Competitor Content", height=200, placeholder="Paste the curriculum text here...")
 
     with col2:
@@ -413,14 +429,32 @@ else:
             # Dynamic Master File Check
             current_master_path = get_latest_master_file()
             
+            # Extract competitor name from website URL or use course name as fallback
+            competitor_name = None
+            if website_link:
+                try:
+                    parsed_url = urllib.parse.urlparse(website_link)
+                    domain = parsed_url.netloc
+                    # Remove www. prefix if present
+                    if domain.startswith('www.'):
+                        domain = domain[4:]
+                    # Extract main domain name (e.g., 'coursera.org' -> 'Coursera')
+                    domain_parts = domain.split('.')
+                    if len(domain_parts) > 0:
+                        competitor_name = domain_parts[0].capitalize()
+                except:
+                    pass
+            
+            # Fallback to course name if competitor name extraction failed
+            if not competitor_name:
+                competitor_name = course_name if course_name else "Unknown Provider"
+            
             if not current_master_path or not os.path.exists(current_master_path):
                 st.error(f"Master file not found in {MASTER_DIR}. Please ensure '{BASE_MASTER_FILENAME}' exists.")
             elif not os.path.exists(TOPICS_JSON_PATH):
                  st.error(f"Topics JSON not found at {TOPICS_JSON_PATH}. Please run regeneration script.")
             elif not os.path.exists(COLUMNS_JSON_PATH):
                  st.error(f"Columns JSON not found at {COLUMNS_JSON_PATH}. Please run: uv run python src/utils/generate_columns_json.py")
-            elif not competitor_name:
-                st.error("Please enter a Competitor Name.")
             elif not course_name:
                 st.error("Please enter a Course Name.")
             elif not website_link:
@@ -513,7 +547,8 @@ else:
                                         columns,
                                         gemini_key,
                                         model_name=selected_model,
-                                        log_callback=extract_log_callback
+                                        log_callback=extract_log_callback,
+                                        course_name=course_name
                                     )
                                     
                                     status.update(label="✅ Extraction Complete!", state="complete", expanded=False)
