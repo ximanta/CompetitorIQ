@@ -1,352 +1,812 @@
 [
   {
-    "topic": "Concurrency (threading/multithreading/async)",
-    "decision": "No",
-    "reasoning": "No explicit mention of concurrency concepts like threading, multithreading, or async programming. Performance optimization is mentioned generally, but not these specific techniques."
-  },
-  {
-    "topic": "Dev environment (VS Code, Jupyter, Colab)",
-    "decision": "Yes",
-    "reasoning": "The content mentions 'Prototyping in notebooks' and 'Prototype abandoned in a notebook', which clearly implies the use of notebook-based development environments like Jupyter or Colab."
-  },
-  {
-    "topic": "FastAPI for services/orchestration",
-    "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned in Module 5 under 'Model Serving & API Development' as 'FastAPI'."
-  },
-  {
-    "topic": "File I/O, logging & error handling",
+    "topic": "What is Linux & Distributions",
     "decision": "Unsure",
-    "reasoning": "While 'failure handling' and 'debugging retrieval failures' are mentioned, implying some form of error management, there is no explicit mention of 'File I/O' or 'logging' as specific topics of study. The signal is partial and ambiguous."
+    "reasoning": "The content mentions 'Setting Up an Ubuntu Virtual Machine in VirtualBox', indicating the use of a Linux distribution (Ubuntu). However, it does not explicitly define 'What is Linux' or discuss different distributions as a dedicated topic, making coverage ambiguous."
   },
   {
-    "topic": "Object-Oriented Programming (OOP)",
+    "topic": "Linux File System Structure (/, /home, /etc)",
     "decision": "No",
-    "reasoning": "There is no explicit mention of Object-Oriented Programming (OOP) concepts. The prerequisites mention Python functions and data structures, but not OOP."
+    "reasoning": "No explicit mention of Linux file system structure or its specific directories was found in the content."
   },
   {
-    "topic": "Python basics (syntax, types, loops, functions)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly states 'Can you write Python functions and work with basic data structures?' as a prerequisite, which clearly implies coverage of Python basics including functions, syntax, and types."
+    "topic": "Basic Linux Commands (ls, cd, cp, mv)",
+    "decision": "No",
+    "reasoning": "No explicit mention of basic Linux commands was found in the content."
   },
   {
-    "topic": "Testing (pytest, unit tests)",
+    "topic": "File Permissions & Ownership",
+    "decision": "No",
+    "reasoning": "No explicit mention of file permissions or ownership was found in the content."
+  },
+  {
+    "topic": "Users and Groups",
+    "decision": "No",
+    "reasoning": "No explicit mention of users and groups was found in the content."
+  },
+  {
+    "topic": "Package Management (apt, yum)",
+    "decision": "No",
+    "reasoning": "No explicit mention of package management tools like apt or yum was found in the content."
+  },
+  {
+    "topic": "Process Management (ps, top, kill)",
+    "decision": "No",
+    "reasoning": "No explicit mention of process management tools like ps, top, or kill was found in the content."
+  },
+  {
+    "topic": "Disk & Storage Basics",
     "decision": "Unsure",
-    "reasoning": "The content frequently mentions 'evaluation' (e.g., RAG evaluation, model performance evaluation) and 'reliability checks,' which are related to testing. However, it does not explicitly mention specific testing methodologies like 'unit tests' or frameworks like 'pytest,' making it ambiguous whether these specific testing practices are covered."
+    "reasoning": "Module 2 mentions 'Enabling Technologies - Storage' and 'Cloud Storage' is listed as a skill. While storage is covered in a cloud context, it's unclear if general 'Disk & Storage Basics' are taught beyond cloud-specific implementations."
   },
   {
-    "topic": "Typing & data validation (type hints, @dataclass, Pydantic)",
+    "topic": "Networking Basics in Linux (ip, ping)",
     "decision": "No",
-    "reasoning": "There is no explicit mention of typing, type hints, dataclasses, or data validation frameworks like Pydantic."
+    "reasoning": "While 'Enabling Technologies - Networking' is mentioned, there is no explicit reference to Linux-specific networking basics or tools like ip and ping."
   },
   {
-    "topic": "Version control (Git/GitHub/GitLab)",
+    "topic": "Shell & Terminal Usage",
     "decision": "No",
-    "reasoning": "There is no explicit mention of version control systems like Git, GitHub, or GitLab."
+    "reasoning": "No explicit mention of teaching shell or terminal usage as a dedicated topic was found, although practical activities might implicitly involve it."
   },
   {
-    "topic": "AI dev tools (Cursor, Windsurf, Replit, vo.dev, Lovable)",
+    "topic": "Python Overview & Use Cases",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'University-level programming experience in Python' as a prerequisite and 'Apply cloud computing principles through hands-on projects using Python'. Python is extensively used for 'hands-on cloud-based development' and 'practical coding exercises', implying its overview and use cases in this context."
+  },
+  {
+    "topic": "Variables and Data Types",
     "decision": "No",
-    "reasoning": "No explicit mention of these specific AI development tools or a general category of 'AI dev tools.'"
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'Variables and Data Types' as a topic; it is assumed as a prerequisite."
   },
   {
-    "topic": "Auth & security (JWT, CORS, RBAC)",
+    "topic": "Input and Output",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'Input and Output' as a topic; it is assumed as a prerequisite."
+  },
+  {
+    "topic": "Conditional Statements",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'Conditional Statements' as a topic; it is assumed as a prerequisite."
+  },
+  {
+    "topic": "Loops (for, while)",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'Loops' as a topic; it is assumed as a prerequisite."
+  },
+  {
+    "topic": "Functions",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'Functions' as a topic; it is assumed as a prerequisite."
+  },
+  {
+    "topic": "Lists, Tuples, and Dictionaries",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching these specific data structures as a topic; they are assumed as a prerequisite."
+  },
+  {
+    "topic": "File Handling",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'File Handling' as a topic; it is assumed as a prerequisite."
+  },
+  {
+    "topic": "Working with JSON and API data handling",
     "decision": "Unsure",
-    "reasoning": "The content mentions 'privacy' and 'internal governance' within the context of 'Responsible and Trusted GenAI' and 'ethical safeguards.' While these are related to security, there is no explicit mention of specific authentication mechanisms (JWT, CORS) or authorization models (RBAC). The signal is too vague for a 'Yes.'"
+    "reasoning": "'Application Programming Interface (API)' is listed as a skill. However, there is no explicit mention of working with JSON or specific techniques for API data handling, making coverage ambiguous."
   },
   {
-    "topic": "Frontend UI (React)",
+    "topic": "Python requests library for API communication",
     "decision": "No",
-    "reasoning": "There is no explicit mention of frontend UI frameworks like React."
+    "reasoning": "No explicit mention of the Python 'requests' library was found in the content."
   },
   {
-    "topic": "Frontend UI (Streamlit/Gradio)",
+    "topic": "Regular expressions for security log analysis",
     "decision": "No",
-    "reasoning": "There is no explicit mention of frontend UI frameworks like Streamlit or Gradio."
+    "reasoning": "No explicit mention of regular expressions or security log analysis was found in the content."
   },
   {
-    "topic": "Mobile app integration (iOS/Android)",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of mobile app integration for iOS or Android."
-  },
-  {
-    "topic": "OpenAPI specifications",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of OpenAPI specifications."
-  },
-  {
-    "topic": "RPC/Realtime (gRPC/WebRTC)",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of RPC or real-time communication protocols like gRPC or WebRTC."
-  },
-  {
-    "topic": "Streaming & comms (WebSocket, SSE)",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of streaming or communication protocols like WebSocket or SSE."
-  },
-  {
-    "topic": "Web apps with Flask",
-    "decision": "No",
-    "reasoning": "While FastAPI is mentioned for API development, there is no explicit mention of building web applications with Flask."
-  },
-  {
-    "topic": "Agent memory / short-term memory",
+    "topic": "Virtual environments and dependency management basics",
     "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned in Module 4 under 'Agentic AI Systems' as 'Planning, tool use, memory, orchestration...'."
+    "reasoning": "The content explicitly mentions 'Setting Up a Python Virtual Environment' in Module 1, which directly covers virtual environments."
   },
   {
-    "topic": "Chunking strategies",
-    "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned in Module 2 under 'RAG Fundamentals' as 'Chunking, retrieval architectures, vector databases...'."
-  },
-  {
-    "topic": "Citations & source tracking",
+    "topic": "Python logging module for application monitoring",
     "decision": "No",
-    "reasoning": "There is no explicit mention of citations or source tracking mechanisms within the content."
+    "reasoning": "No explicit mention of the Python 'logging' module or application monitoring using it was found in the content."
   },
   {
-    "topic": "ETL for docs (PDF/HTML/CSV) & metadata",
+    "topic": "Command line arguments using argparse module",
+    "decision": "No",
+    "reasoning": "No explicit mention of command line arguments or the 'argparse' module was found in the content."
+  },
+  {
+    "topic": "Introduction to object oriented programming concepts",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching object-oriented programming concepts."
+  },
+  {
+    "topic": "Basic multithreading for automation scripts",
+    "decision": "No",
+    "reasoning": "No explicit mention of multithreading was found in the content."
+  },
+  {
+    "topic": "Working with CSV files for cloud reports",
+    "decision": "No",
+    "reasoning": "No explicit mention of working with CSV files was found in the content."
+  },
+  {
+    "topic": "Error Handling (Exceptions)",
+    "decision": "No",
+    "reasoning": "Python is used, but there is no explicit mention of teaching 'Error Handling (Exceptions)' as a topic; it is assumed as a prerequisite."
+  },
+  {
+    "topic": "Basic Python Scripting",
+    "decision": "Yes",
+    "reasoning": "The content mentions 'practical coding exercises using Python' and 'hands-on cloud-based development', which implies basic Python scripting for tasks."
+  },
+  {
+    "topic": "What is a Database & DBMS",
+    "decision": "Yes",
+    "reasoning": "Module 3 covers 'Cloud Data Infrastructure' and 'Relational Databases - Introduction'. Module 4 covers 'Databases in Cloud Computing'. 'Database Management' and 'Database Design' are listed as skills. This explicitly covers what a database is and implicitly covers DBMS through discussion of specific database technologies."
+  },
+  {
+    "topic": "MySQL Architecture",
     "decision": "Unsure",
-    "reasoning": "The content mentions handling 'large document collections' for RAG, which implies some form of document processing. However, it does not explicitly mention 'ETL' or specific document formats (PDF/HTML/CSV) or metadata handling, making the coverage ambiguous."
+    "reasoning": "MySQL is discussed and compared with other database technologies, but its specific architecture is not explicitly detailed as a learning topic, making coverage ambiguous."
   },
   {
-    "topic": "Embeddings & vector databases (Chroma, Pinecone, Weaviate, FAISS, pgvector)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'embeddings' in Module 1 and 'vector databases' in Module 2, covering the core concepts of this topic."
-  },
-  {
-    "topic": "Guardrails, refusals & prompt injection defense",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'safety prompts' in Module 2 and 'Guardrails' in Module 5, directly covering aspects of this topic."
-  },
-  {
-    "topic": "Knowledge graphs in RAG",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of knowledge graphs in the context of RAG or otherwise."
-  },
-  {
-    "topic": "Postgres + pgvector",
-    "decision": "No",
-    "reasoning": "While 'vector databases' are mentioned, there is no explicit mention of 'Postgres' or 'pgvector' as specific technologies."
-  },
-  {
-    "topic": "RAG evaluation & fallback strategies",
+    "topic": "Creating Databases and Tables",
     "decision": "Unsure",
-    "reasoning": "The content explicitly covers 'RAG evaluation' and mentions 'RAGAS-style thinking' in Module 2. However, there is no explicit mention of 'fallback strategies' for RAG, making the coverage of the full topic ambiguous."
+    "reasoning": "Module 3 includes an 'SQL Refresher' and 'Database Design' is a listed skill. While these suggest database creation, the explicit teaching of 'Creating Databases and Tables' is not detailed enough to confirm."
   },
   {
-    "topic": "RAG pipeline (build)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly states that participants will 'build enterprise-grade RAG pipelines' and 'Building RAG prototypes,' and lists 'ENTERPRISE RAG SYSTEM' as a deliverable, clearly covering the building of RAG pipelines."
-  },
-  {
-    "topic": "Rerankers",
-    "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned in Module 2 under 'Advanced RAG Techniques' as 'Hybrid search, re-ranking...' and in the description of the 'ENTERPRISE RAG SYSTEM.'"
-  },
-  {
-    "topic": "Semantic search & hybrid BM25+vector fusion",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'hybrid search' multiple times (e.g., Module 2, 'Designing production RAG'). 'Semantic search' is strongly implied by the coverage of embeddings and vector databases within RAG systems. While BM25 is not explicitly named, the core concept of hybrid search is covered."
-  },
-  {
-    "topic": "AutoGen",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of AutoGen."
-  },
-  {
-    "topic": "CrewAI",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of CrewAI."
-  },
-  {
-    "topic": "LangChain",
-    "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned as 'Working with frameworks like LangChain.'"
-  },
-  {
-    "topic": "LangFlow",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of LangFlow."
-  },
-  {
-    "topic": "LangGraph",
-    "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned in Module 4 under 'Agentic AI Systems' as 'orchestration (e.g., LangGraph-style concepts)'."
-  },
-  {
-    "topic": "LlamaIndex",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of LlamaIndex."
-  },
-  {
-    "topic": "MCP (Model Context Protocol)",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of MCP (Model Context Protocol)."
-  },
-  {
-    "topic": "OpenAI Assistants API",
-    "decision": "No",
-    "reasoning": "While 'LLM APIs' are mentioned generally, there is no explicit mention of the OpenAI Assistants API."
-  },
-  {
-    "topic": "Phidata",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of Phidata."
-  },
-  {
-    "topic": "Planning/Reasoning: ReAct, Reflexion, Self-corrective, planner/actor/critic",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Planning' and 'Reasoning' in the context of agentic AI systems (e.g., Module 4, Capstone description), which clearly covers the core concepts of this topic, even if specific algorithms like ReAct are not named."
-  },
-  {
-    "topic": "Retries & circuit breakers",
+    "topic": "Data Types in MySQL",
     "decision": "Unsure",
-    "reasoning": "While 'reliability,' 'failure modes,' and 'failure handling' are mentioned, implying a need for robust systems, there is no explicit mention of specific techniques like 'retries' or 'circuit breakers,' making the coverage ambiguous."
+    "reasoning": "An 'SQL Refresher' is mentioned, which would typically include data types. However, 'Data Types in MySQL' is not explicitly listed as a topic, making coverage ambiguous."
   },
   {
-    "topic": "Swarm/BeeAI",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of Swarm or BeeAI."
-  },
-  {
-    "topic": "Tool calling & chaining",
+    "topic": "CRUD Operations",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'tool-calling' in Module 2 and 'tool use' in Module 4 and other sections related to agentic AI, directly covering this topic."
+    "reasoning": "The content mentions an 'SQL Refresher' and 'MongoDB Installation, Connection, and Querying', which inherently involve Create, Read, Update, and Delete (CRUD) operations for databases."
   },
   {
-    "topic": "Tracing/Observability (Langfuse, OpenTelemetry)",
+    "topic": "Primary and Foreign Keys",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'observability' and 'monitoring' in the context of deploying systems (e.g., 'Deploying systems with monitoring, guardrails, and observability' and Module 5), clearly covering the core concepts of this topic."
+    "reasoning": "Module 3 explicitly covers 'Relational Databases - Relationships', which directly includes the concepts of primary and foreign keys."
   },
   {
-    "topic": "API integration & rate limits, key management",
+    "topic": "SQL Constraints",
     "decision": "Unsure",
-    "reasoning": "While 'LLM APIs' and 'API Development' are explicitly mentioned, implying API integration, there is no explicit mention of specific operational concerns like 'rate limits' or 'key management,' making the coverage of the full topic ambiguous."
+    "reasoning": "An 'SQL Refresher' is mentioned, which might cover SQL constraints. However, 'SQL Constraints' is not explicitly listed as a topic, making coverage ambiguous."
   },
   {
-    "topic": "Hallucinations, jailbreaks & safety",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'hallucination handling' and 'safety guardrails' (Module 5), and 'safety prompts' (Module 2). While 'jailbreaks' are not explicitly named, the focus on 'Responsible and Trusted GenAI' and 'guardrails' clearly implies coverage of such safety concerns."
-  },
-  {
-    "topic": "LLM caching & prompt/version management (LCEL/Runnable)",
-    "decision": "No",
-    "reasoning": "There is no explicit mention of LLM caching, prompt/version management, or specific frameworks like LCEL/Runnable."
-  },
-  {
-    "topic": "Open vs closed models; model selection",
-    "decision": "Yes",
-    "reasoning": "The content explicitly covers 'model selection' and implies 'open vs closed models' by listing examples of both (GPT, Gemini, LLaMA, Mistral) in Module 1, and discussing how to 'select the right model for cost, capability, and constraints.'"
-  },
-  {
-    "topic": "Prompt engineering (zero/few-shot, role-based, ReAct, self-consistency)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly features a module titled 'Advanced Prompt Engineering' and discusses 'Systematic prompting patterns,' clearly covering the core concept of prompt engineering. While specific patterns like zero/few-shot are not named, the systematic approach is implied."
-  },
-  {
-    "topic": "Prompt evaluation & debugging",
+    "topic": "Joins (Basic)",
     "decision": "Unsure",
-    "reasoning": "While 'debugging retrieval failures' is mentioned, and 'evaluation' is covered for RAG systems, there is no explicit mention of specific 'prompt evaluation' or 'debugging prompts' as a distinct topic, leading to ambiguity."
+    "reasoning": "An 'SQL Refresher' is mentioned, which would typically include basic joins. However, 'Joins (Basic)' is not explicitly listed as a topic, making coverage ambiguous."
   },
   {
-    "topic": "Tokens & context windows",
+    "topic": "User management and role based access control",
+    "decision": "No",
+    "reasoning": "No explicit mention of user management or role-based access control for databases was found in the content."
+  },
+  {
+    "topic": "MySQL privileges and permission management basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of MySQL privileges or permission management was found in the content."
+  },
+  {
+    "topic": "SQL injection concepts and prevention techniques",
+    "decision": "No",
+    "reasoning": "No explicit mention of SQL injection or prevention techniques was found in the content."
+  },
+  {
+    "topic": "Stored procedures and basic database functions",
+    "decision": "No",
+    "reasoning": "No explicit mention of stored procedures or basic database functions was found in the content."
+  },
+  {
+    "topic": "Views for secure data abstraction",
+    "decision": "No",
+    "reasoning": "No explicit mention of database views was found in the content."
+  },
+  {
+    "topic": "Transactions and ACID property fundamentals",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'tokenisation' and 'tokens' in Module 1 ('Attention, tokenisation, embeddings...'), which are fundamental to understanding LLM processing. 'Context windows' are a core concept directly related to tokens and how LLMs process language, making their coverage strongly implied."
+    "reasoning": "Module 4 explicitly covers 'Acid vs. Base', which includes the fundamentals of ACID properties for transactions."
   },
   {
-    "topic": "Transformers & attention (basics)",
+    "topic": "Basic query optimization using EXPLAIN",
+    "decision": "No",
+    "reasoning": "No explicit mention of query optimization techniques like using EXPLAIN was found in the content."
+  },
+  {
+    "topic": "Performance monitoring using slow query logs",
+    "decision": "No",
+    "reasoning": "No explicit mention of performance monitoring using slow query logs was found in the content."
+  },
+  {
+    "topic": "Database connectivity using Python integration",
     "decision": "Yes",
-    "reasoning": "The topic is explicitly mentioned in Module 1 as 'Attention, tokenisation... The Transformer Architecture' and 'Understanding how transformers work.'"
+    "reasoning": "The content explicitly mentions 'Working with Python and MySQL', 'Working with Python and MongoDB', and 'Working with Python and Neo4j', which directly covers database connectivity using Python."
   },
   {
-    "topic": "Fine-tuning (LoRA/QLoRA/PEFT/DoRA)",
+    "topic": "Introduction to managed databases on AWS RDS",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS RDS or other specific managed database services was found in the content."
+  },
+  {
+    "topic": "Indexes (Basics)",
+    "decision": "No",
+    "reasoning": "While 'optimal performance' is mentioned in relation to schemas, there is no explicit mention of database indexes."
+  },
+  {
+    "topic": "Backup and Restore",
+    "decision": "No",
+    "reasoning": "No explicit mention of database backup and restore procedures was found in the content."
+  },
+  {
+    "topic": "What is a Network",
     "decision": "Yes",
-    "reasoning": "The content explicitly dedicates Module 3 to 'LLM Fine-Tuning & Alignment' and specifically mentions 'LoRA, QLoRA and related methods' and 'Parameter-Efcient Fine-Tuning (PEFT).'"
+    "reasoning": "Module 2 explicitly mentions 'Enabling Technologies - Networking', which implies covering the fundamental concept of what a network is."
   },
   {
-    "topic": "RLHF/RHLF & Reinforcement Learning",
+    "topic": "Types of Networks (LAN, WAN)",
     "decision": "No",
-    "reasoning": "While 'alignment' is mentioned in a module title, there is no explicit mention of RLHF/RHLF or Reinforcement Learning as a method for alignment."
+    "reasoning": "While 'Enabling Technologies - Networking' is mentioned, there is no explicit reference to different types of networks like LAN or WAN."
   },
   {
-    "topic": "Hugging Face Transformers",
+    "topic": "OSI Model",
     "decision": "No",
-    "reasoning": "While 'transformers' are covered, there is no explicit mention of the 'Hugging Face Transformers' library."
+    "reasoning": "No explicit mention of the OSI Model was found in the content."
   },
   {
-    "topic": "NumPy & Pandas",
+    "topic": "TCP/IP Model",
     "decision": "No",
-    "reasoning": "There is no explicit mention of NumPy or Pandas."
+    "reasoning": "No explicit mention of the TCP/IP Model was found in the content."
   },
   {
-    "topic": "PyTorch / TensorFlow / Keras",
+    "topic": "IPv4 subnetting practical exercises using real scenarios",
     "decision": "No",
-    "reasoning": "While 'neural network foundations' are mentioned, there is no explicit mention of specific deep learning frameworks like PyTorch, TensorFlow, or Keras."
+    "reasoning": "No explicit mention of IPv4 subnetting or practical exercises was found in the content."
   },
   {
-    "topic": "Scikit-learn & classical ML (regression, classification, metrics)",
+    "topic": "Subnetting Basics",
     "decision": "No",
-    "reasoning": "There is no explicit mention of Scikit-learn or classical machine learning concepts like regression, classification, or specific metrics."
+    "reasoning": "No explicit mention of subnetting basics was found in the content."
   },
   {
-    "topic": "Visualization (Matplotlib/Seaborn/Plotly/Bokeh/BertViz)",
+    "topic": "Introduction to IPv6 addressing fundamentals",
     "decision": "No",
-    "reasoning": "There is no explicit mention of data visualization tools or libraries."
+    "reasoning": "No explicit mention of IPv6 addressing was found in the content."
   },
   {
-    "topic": "Vision/Audio/Video (CLIP, DALL·E, Diffusion, Whisper, TTS, VLMs, Sora)",
-    "decision": "Yes",
-    "reasoning": "The content explicitly dedicates Module 4 to 'Multimodal & Agentic AI' and mentions 'Multimodal foundations,' 'text+image understanding and generation,' and 'Vision-Language Models & Image Generation,' clearly covering aspects of this topic."
-  },
-  {
-    "topic": "Cloud providers & SDKs (Azure, Bedrock, Vertex, watsonx, Boto3)",
+    "topic": "Static and dynamic routing configuration basics",
     "decision": "No",
-    "reasoning": "While production deployment is a focus, there is no explicit mention of specific cloud providers (Azure, Bedrock, Vertex, watsonx) or their SDKs (Boto3)."
+    "reasoning": "No explicit mention of routing configuration was found in the content."
   },
   {
-    "topic": "Containerization & CI/CD",
+    "topic": "VLAN concepts and inter VLAN routing",
+    "decision": "No",
+    "reasoning": "No explicit mention of VLAN concepts was found in the content."
+  },
+  {
+    "topic": "Network address translation configuration basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of Network Address Translation (NAT) was found in the content."
+  },
+  {
+    "topic": "Access control lists configuration fundamentals",
+    "decision": "No",
+    "reasoning": "No explicit mention of Access Control Lists (ACLs) was found in the content."
+  },
+  {
+    "topic": "Packet capture analysis using Wireshark basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of packet capture analysis or Wireshark was found in the content."
+  },
+  {
+    "topic": "Firewall concepts and packet filtering rules",
+    "decision": "No",
+    "reasoning": "No explicit mention of firewall concepts or packet filtering rules was found in the content."
+  },
+  {
+    "topic": "Basic load balancing concepts in networking",
+    "decision": "No",
+    "reasoning": "No explicit mention of load balancing concepts was found in the content."
+  },
+  {
+    "topic": "Common Network Devices",
+    "decision": "No",
+    "reasoning": "No explicit mention of common network devices was found in the content."
+  },
+  {
+    "topic": "DNS, DHCP, HTTP",
+    "decision": "No",
+    "reasoning": "No explicit mention of DNS, DHCP, or HTTP was found in the content."
+  },
+  {
+    "topic": "Ports and Protocols",
+    "decision": "No",
+    "reasoning": "No explicit mention of ports and protocols was found in the content."
+  },
+  {
+    "topic": "Network Troubleshooting Basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of network troubleshooting basics was found in the content."
+  },
+  {
+    "topic": "Linux Boot Process",
+    "decision": "No",
+    "reasoning": "No explicit mention of the Linux boot process was found in the content."
+  },
+  {
+    "topic": "System Services (systemctl)",
+    "decision": "No",
+    "reasoning": "No explicit mention of system services or systemctl was found in the content."
+  },
+  {
+    "topic": "User & Group Management (Advanced)",
+    "decision": "No",
+    "reasoning": "No explicit mention of advanced user and group management was found in the content."
+  },
+  {
+    "topic": "Disk Partitioning & Mounting",
+    "decision": "No",
+    "reasoning": "No explicit mention of disk partitioning or mounting was found in the content."
+  },
+  {
+    "topic": "Logical Volume Management (LVM)",
+    "decision": "No",
+    "reasoning": "No explicit mention of Logical Volume Management (LVM) was found in the content."
+  },
+  {
+    "topic": "Log Management",
+    "decision": "No",
+    "reasoning": "No explicit mention of log management was found in the content."
+  },
+  {
+    "topic": "Job Scheduling (cron, at)",
+    "decision": "No",
+    "reasoning": "No explicit mention of job scheduling tools like cron or at was found in the content."
+  },
+  {
+    "topic": "Linux text processing tools for log analysis",
+    "decision": "No",
+    "reasoning": "No explicit mention of Linux text processing tools for log analysis was found in the content."
+  },
+  {
+    "topic": "Basic shell scripting for task automation",
+    "decision": "No",
+    "reasoning": "While Python scripting is mentioned, there is no explicit mention of basic shell scripting for task automation."
+  },
+  {
+    "topic": "Advanced Linux networking utilities for troubleshooting",
+    "decision": "No",
+    "reasoning": "No explicit mention of advanced Linux networking utilities for troubleshooting was found in the content."
+  },
+  {
+    "topic": "Archive and compression tools for backups",
+    "decision": "No",
+    "reasoning": "No explicit mention of archive and compression tools for backups was found in the content."
+  },
+  {
+    "topic": "Linux boot troubleshooting and recovery basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of Linux boot troubleshooting or recovery was found in the content."
+  },
+  {
+    "topic": "Firewall management using UFW security rules",
+    "decision": "No",
+    "reasoning": "No explicit mention of firewall management using UFW was found in the content."
+  },
+  {
+    "topic": "Secure remote administration using SSH keys",
+    "decision": "No",
+    "reasoning": "No explicit mention of secure remote administration using SSH keys was found in the content."
+  },
+  {
+    "topic": "Backup and restore fundamentals using rsync",
+    "decision": "No",
+    "reasoning": "No explicit mention of backup and restore fundamentals using rsync was found in the content."
+  },
+  {
+    "topic": "Disk usage monitoring and capacity planning",
+    "decision": "No",
+    "reasoning": "No explicit mention of disk usage monitoring or capacity planning was found in the content."
+  },
+  {
+    "topic": "Introduction to SELinux security concepts",
+    "decision": "No",
+    "reasoning": "No explicit mention of SELinux security concepts was found in the content."
+  },
+  {
+    "topic": "Kernel Basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of Kernel Basics was found in the content."
+  },
+  {
+    "topic": "Performance Monitoring",
     "decision": "Unsure",
-    "reasoning": "The content explicitly mentions 'containerisation' in Module 5. However, there is no explicit mention of 'CI/CD' (Continuous Integration/Continuous Deployment), making the coverage of the full topic ambiguous."
+    "reasoning": "The content mentions 'optimal performance' for schemas and 'Scaling in Cloud Databases', but a dedicated topic on general 'Performance Monitoring' is not explicitly covered, making coverage ambiguous."
   },
   {
-    "topic": "Copilot Studio / Microsoft Copilot ecosystem",
+    "topic": "Linux Security Hardening",
     "decision": "No",
-    "reasoning": "There is no explicit mention of Copilot Studio or the Microsoft Copilot ecosystem."
+    "reasoning": "No explicit mention of Linux security hardening was found in the content."
   },
   {
-    "topic": "Deployment (cloud & edge)",
+    "topic": "What is Cloud Computing",
     "decision": "Yes",
-    "reasoning": "The content explicitly focuses on 'Deployment' and 'Production-Ready AI' throughout, including a dedicated module (Module 5). While 'cloud' is not explicitly named, 'production deployment' strongly implies cloud environments. 'Edge' is not mentioned."
+    "reasoning": "The course title is 'Cloud Computing Fundamentals' and Module 1 is 'Definitions and History of Cloud Computing', explicitly covering this topic."
   },
   {
-    "topic": "LLMOps: monitoring, tracing, eval (Langsmith, Langwatch, AgentOps)",
+    "topic": "Cloud Service Models (IaaS, PaaS, SaaS)",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'monitoring,' 'observability' (which includes tracing), and 'evaluation' for RAG and model performance. While the term 'LLMOps' is not explicitly used, these covered concepts are core components of LLMOps. Specific tools are not mentioned."
+    "reasoning": "Module 2, 'Cloud Computing Platforms and Service Models', explicitly covers 'Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS)'."
   },
   {
-    "topic": "MLOps foundations (MLflow, versioning)",
-    "decision": "Unsure",
-    "reasoning": "While the program focuses on 'production-ready skills,' 'deployment,' 'monitoring,' and 'reliability,' which are foundational MLOps concepts, the term 'MLOps' is not explicitly used, nor are specific tools like MLflow or the concept of 'versioning' explicitly mentioned."
-  },
-  {
-    "topic": "Multi-Agent Reinforcement Learning (MARL)",
+    "topic": "Deployment Models (Public, Private, Hybrid)",
     "decision": "No",
-    "reasoning": "While 'multi-agent systems' and 'orchestration' are explicitly covered, there is no mention of 'Reinforcement Learning' in the context of multi-agent systems or MARL."
+    "reasoning": "No explicit mention of cloud deployment models (Public, Private, Hybrid) was found in the content."
   },
   {
-    "topic": "Performance & cost optimization (latency, P95/TSR)",
+    "topic": "Virtual Machines",
     "decision": "Yes",
-    "reasoning": "The content explicitly covers 'performance & cost optimization,' mentioning 'latency' and 'cost' multiple times (e.g., 'optimizing for cost, speed, and reliability,' Module 5's 'latency and cost optimisation,' and measuring 'latency, cost')."
+    "reasoning": "The content explicitly mentions 'Configure and deploy virtual machines' and Module 2 covers 'Enabling Technologies - Virtualization' and 'Setting Up an Ubuntu Virtual Machine in VirtualBox'."
   },
   {
-    "topic": "Security & governance (RBAC, PII redaction, API protection, access control, regulatory)",
-    "decision": "Unsure",
-    "reasoning": "The content mentions 'privacy,' 'internal governance,' and 'ethical safeguards' within the context of 'Responsible and Trusted GenAI.' While these are related to security and governance, specific aspects like RBAC, PII redaction, API protection, access control, or regulatory compliance are not explicitly mentioned, making the coverage ambiguous."
+    "topic": "Storage Services",
+    "decision": "Yes",
+    "reasoning": "Module 2 covers 'Enabling Technologies - Storage' and 'Cloud Storage' is listed as a skill, explicitly covering storage services in a cloud context."
   },
   {
-    "topic": "Testing in prod: SLOs, shadow runs, gold sets",
+    "topic": "AWS global infrastructure and availability zones concepts",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS global infrastructure or availability zones was found in the content."
+  },
+  {
+    "topic": "Shared responsibility model with AWS practical examples",
+    "decision": "No",
+    "reasoning": "No explicit mention of the shared responsibility model or AWS was found in the content."
+  },
+  {
+    "topic": "Basic hands on EC2 instance creation practice",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS EC2 instances was found in the content."
+  },
+  {
+    "topic": "Introduction to cloud support troubleshooting scenarios",
+    "decision": "No",
+    "reasoning": "No explicit mention of cloud support troubleshooting scenarios was found in the content."
+  },
+  {
+    "topic": "Basic tagging and resource organization strategy",
+    "decision": "No",
+    "reasoning": "No explicit mention of tagging or resource organization strategy was found in the content."
+  },
+  {
+    "topic": "Networking in Cloud",
+    "decision": "Yes",
+    "reasoning": "Module 2 covers 'Enabling Technologies - Networking' in the context of cloud computing, implying coverage of networking in the cloud."
+  },
+  {
+    "topic": "Identity & Access Management (IAM)",
+    "decision": "No",
+    "reasoning": "No explicit mention of Identity & Access Management (IAM) was found in the content."
+  },
+  {
+    "topic": "Basic Cloud Security",
     "decision": "Unsure",
-    "reasoning": "While the program emphasizes 'production-grade capabilities,' 'reliability checks,' and measuring system effectiveness, there is no explicit mention of specific 'testing in prod' methodologies like SLOs, shadow runs, or gold sets, making the coverage ambiguous."
+    "reasoning": "Module 2 mentions 'Benefits and Risks of Cloud Computing', which might touch upon security risks. However, 'Basic Cloud Security' as a dedicated topic is not explicitly covered, making coverage ambiguous."
+  },
+  {
+    "topic": "Cost Management Basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of cost management basics was found in the content."
+  },
+  {
+    "topic": "Popular Cloud Providers",
+    "decision": "No",
+    "reasoning": "No explicit mention of specific popular cloud providers like AWS, Azure, or GCP was found in the content."
+  },
+  {
+    "topic": "CIA Triad (Confidentiality, Integrity, Availability)",
+    "decision": "No",
+    "reasoning": "No explicit mention of the CIA Triad was found in the content."
+  },
+  {
+    "topic": "Types of Cyber Threats",
+    "decision": "No",
+    "reasoning": "No explicit mention of types of cyber threats was found in the content."
+  },
+  {
+    "topic": "Introduction to security operations center fundamentals",
+    "decision": "No",
+    "reasoning": "No explicit mention of security operations center fundamentals was found in the content."
+  },
+  {
+    "topic": "Basic SIEM concepts and log correlation basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of SIEM concepts or log correlation was found in the content."
+  },
+  {
+    "topic": "Identity and access management in cloud environments",
+    "decision": "No",
+    "reasoning": "No explicit mention of identity and access management in cloud environments was found in the content."
+  },
+  {
+    "topic": "Multi factor authentication implementation concepts",
+    "decision": "No",
+    "reasoning": "No explicit mention of multi-factor authentication was found in the content."
+  },
+  {
+    "topic": "Public key infrastructure and digital certificates basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of public key infrastructure or digital certificates was found in the content."
+  },
+  {
+    "topic": "Hashing algorithms and password security practices",
+    "decision": "No",
+    "reasoning": "No explicit mention of hashing algorithms or password security practices was found in the content."
+  },
+  {
+    "topic": "Data protection and privacy regulations overview",
+    "decision": "No",
+    "reasoning": "No explicit mention of data protection or privacy regulations was found in the content."
+  },
+  {
+    "topic": "Malware Basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of malware basics was found in the content."
+  },
+  {
+    "topic": "Authentication vs Authorization",
+    "decision": "No",
+    "reasoning": "No explicit mention of authentication vs. authorization was found in the content."
+  },
+  {
+    "topic": "Encryption Basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of encryption basics was found in the content."
+  },
+  {
+    "topic": "Security Policies",
+    "decision": "No",
+    "reasoning": "No explicit mention of security policies was found in the content."
+  },
+  {
+    "topic": "Risk, Threat & Vulnerability",
+    "decision": "Unsure",
+    "reasoning": "Module 2 mentions 'Benefits and Risks of Cloud Computing'. While 'risks' are mentioned, it's too generic to confidently confirm coverage of the broader 'Risk, Threat & Vulnerability' topic in a security context."
+  },
+  {
+    "topic": "Firewalls & IDS/IPS",
+    "decision": "No",
+    "reasoning": "No explicit mention of firewalls or IDS/IPS was found in the content."
+  },
+  {
+    "topic": "Security Awareness",
+    "decision": "No",
+    "reasoning": "No explicit mention of security awareness was found in the content."
+  },
+  {
+    "topic": "Compliance & Standards (ISO, PCI-DSS)",
+    "decision": "No",
+    "reasoning": "No explicit mention of compliance or standards like ISO or PCI-DSS was found in the content."
+  },
+  {
+    "topic": "Cloud Computing fundamentals and service models (IaaS, PaaS, SaaS)",
+    "decision": "Yes",
+    "reasoning": "This topic is explicitly covered by 'Definitions and History of Cloud Computing' and 'Cloud Computing Platforms and Service Models' which detail IaaS, PaaS, and SaaS."
+  },
+  {
+    "topic": "AWS core services (EC2, S3, RDS, VPC, Route 53)",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS core services like EC2, S3, RDS, VPC, or Route 53 was found in the content."
+  },
+  {
+    "topic": "Cloud networking (VPC peering, NAT Gateway, Load Balancer)",
+    "decision": "No",
+    "reasoning": "While 'Enabling Technologies - Networking' is mentioned, specific cloud networking concepts like VPC peering, NAT Gateway, or Load Balancer are not explicitly covered."
+  },
+  {
+    "topic": "High Availability, Disaster Recovery, and Elasticity",
+    "decision": "Unsure",
+    "reasoning": "Module 4 mentions 'horizontal vs. vertical scaling', which relates to elasticity. However, High Availability and Disaster Recovery are not explicitly mentioned, making coverage ambiguous."
+  },
+  {
+    "topic": "AWS IAM policies and role based access control",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS IAM policies or role-based access control was found in the content."
+  },
+  {
+    "topic": "EBS volumes and snapshot management fundamentals",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS EBS volumes or snapshot management was found in the content."
+  },
+  {
+    "topic": "Auto Scaling group configuration hands on practice",
+    "decision": "No",
+    "reasoning": "No explicit mention of Auto Scaling groups was found in the content."
+  },
+  {
+    "topic": "Basic AWS security groups troubleshooting scenarios",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS security groups or troubleshooting scenarios was found in the content."
+  },
+  {
+    "topic": "S3 lifecycle policies and storage optimization",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS S3 lifecycle policies or storage optimization was found in the content."
+  },
+  {
+    "topic": "AWS Well Architected Framework introduction",
+    "decision": "No",
+    "reasoning": "No explicit mention of the AWS Well-Architected Framework was found in the content."
+  },
+  {
+    "topic": "Cloud automation using AWS CloudShell, SDK, and Python (Boto3)",
+    "decision": "No",
+    "reasoning": "While Python is used, there is no explicit mention of AWS CloudShell, SDK, or Boto3 for cloud automation."
+  },
+  {
+    "topic": "Application provisioning with Elastic Beanstalk and CodePipeline",
+    "decision": "No",
+    "reasoning": "No explicit mention of Elastic Beanstalk or CodePipeline was found in the content."
+  },
+  {
+    "topic": "Monitoring and log analysis using AWS CloudWatch",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS CloudWatch or log analysis using it was found in the content."
+  },
+  {
+    "topic": "Generative AI tools (ChatGPT, Gemini) for cloud automation",
+    "decision": "No",
+    "reasoning": "No explicit mention of Generative AI tools like ChatGPT or Gemini for cloud automation was found in the content."
+  },
+  {
+    "topic": "fundamentals using Ansible for Linux systems.",
+    "decision": "No",
+    "reasoning": "No explicit mention of Ansible was found in the content."
+  },
+  {
+    "topic": "Ansible playbooks for package, service, and user management.",
+    "decision": "No",
+    "reasoning": "No explicit mention of Ansible playbooks was found in the content."
+  },
+  {
+    "topic": "Advanced Ansible concepts",
+    "decision": "No",
+    "reasoning": "No explicit mention of advanced Ansible concepts was found in the content."
+  },
+  {
+    "topic": "Introduction to Terraform infrastructure automation basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of Terraform was found in the content."
+  },
+  {
+    "topic": "CI CD pipeline fundamentals using GitHub Actions",
+    "decision": "No",
+    "reasoning": "While GitHub is mentioned, there is no explicit mention of GitHub Actions or CI/CD pipeline fundamentals."
+  },
+  {
+    "topic": "Secrets management using AWS Secrets Manager",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS Secrets Manager was found in the content."
+  },
+  {
+    "topic": "Infrastructure state management and version control",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Getting Started with Git and GitHub' for version control, which is a fundamental aspect of infrastructure state management."
+  },
+  {
+    "topic": "Container basics using Docker with AWS integration",
+    "decision": "No",
+    "reasoning": "No explicit mention of containers, Docker, or AWS integration with containers was found in the content."
+  },
+  {
+    "topic": "AWS resources using YAML-based CloudFormation templates.",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS CloudFormation or YAML templates was found in the content."
+  },
+  {
+    "topic": "Managing CloudFormation stacks, updates, and change sets.",
+    "decision": "No",
+    "reasoning": "No explicit mention of managing CloudFormation stacks was found in the content."
+  },
+  {
+    "topic": "Template validation, parameterization, and deployment using AWS CLI.",
+    "decision": "No",
+    "reasoning": "No explicit mention of template validation, parameterization, deployment using AWS CLI, or CloudFormation was found in the content."
+  },
+  {
+    "topic": "infrastructure deployment using reusable templates.",
+    "decision": "No",
+    "reasoning": "No explicit mention of infrastructure deployment using reusable templates was found in the content."
+  },
+  {
+    "topic": "Generative AI tools (ChatGPT, Gemini) for generating Ansible playbooks and CloudFormation templates.",
+    "decision": "No",
+    "reasoning": "No explicit mention of Generative AI tools for generating playbooks or templates was found in the content."
+  },
+  {
+    "topic": "AI-driven troubleshooting, optimization, and security automation for cloud infrastructure.",
+    "decision": "No",
+    "reasoning": "No explicit mention of AI-driven troubleshooting, optimization, or security automation for cloud infrastructure was found in the content."
+  },
+  {
+    "topic": "Cloud monitoring and observability fundamentals",
+    "decision": "No",
+    "reasoning": "No explicit mention of cloud monitoring or observability fundamentals was found in the content."
+  },
+  {
+    "topic": "AWS infrastructure health monitoring techniques",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS infrastructure health monitoring techniques was found in the content."
+  },
+  {
+    "topic": "CloudWatch metrics and performance analysis",
+    "decision": "No",
+    "reasoning": "No explicit mention of CloudWatch metrics or performance analysis was found in the content."
+  },
+  {
+    "topic": "Custom CloudWatch dashboards creation",
+    "decision": "No",
+    "reasoning": "No explicit mention of custom CloudWatch dashboards creation was found in the content."
+  },
+  {
+    "topic": "AWS CloudTrail for audit logging fundamentals",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS CloudTrail for audit logging was found in the content."
+  },
+  {
+    "topic": "GuardDuty and Security Hub introduction basics",
+    "decision": "No",
+    "reasoning": "No explicit mention of GuardDuty or Security Hub was found in the content."
+  },
+  {
+    "topic": "Basic incident detection and alert response workflow",
+    "decision": "No",
+    "reasoning": "No explicit mention of incident detection or alert response workflow was found in the content."
+  },
+  {
+    "topic": "Cost monitoring using AWS Cost Explorer",
+    "decision": "No",
+    "reasoning": "No explicit mention of cost monitoring using AWS Cost Explorer was found in the content."
+  },
+  {
+    "topic": "Service level objectives and reliability fundamentals",
+    "decision": "No",
+    "reasoning": "No explicit mention of service level objectives or reliability fundamentals was found in the content."
+  },
+  {
+    "topic": "Alarms, anomaly detection, automated actions",
+    "decision": "No",
+    "reasoning": "No explicit mention of alarms, anomaly detection, or automated actions for monitoring was found in the content."
+  },
+  {
+    "topic": "Event-driven monitoring with EventBridge",
+    "decision": "No",
+    "reasoning": "No explicit mention of EventBridge or event-driven monitoring was found in the content."
+  },
+  {
+    "topic": "Centralized logging using CloudWatch Logs",
+    "decision": "No",
+    "reasoning": "No explicit mention of centralized logging using CloudWatch Logs was found in the content."
+  },
+  {
+    "topic": "Log querying with Logs Insights",
+    "decision": "No",
+    "reasoning": "No explicit mention of log querying with Logs Insights was found in the content."
+  },
+  {
+    "topic": "AWS compliance and security governance",
+    "decision": "No",
+    "reasoning": "No explicit mention of AWS compliance or security governance was found in the content."
+  },
+  {
+    "topic": "GenAI-driven cloud monitoring automation",
+    "decision": "No",
+    "reasoning": "No explicit mention of GenAI-driven cloud monitoring automation was found in the content."
   }
 ]

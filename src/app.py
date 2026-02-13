@@ -161,17 +161,35 @@ if 'master_file_updated' not in st.session_state:
 import glob
 import re
 
-MASTER_DIR = "src/data/master"
-BASE_MASTER_FILENAME = "Agentic AI Course Content Competition Analysis.xlsx"
-MASTER_FILE_PATH = "src/data/master/Agentic AI Course Content Competition Analysis.xlsx"
-TOPICS_JSON_PATH = "src/data/topics.json"
-COLUMNS_JSON_PATH = "src/data/price_duration_columns.json"
+# Dynamic mapping based on selection
+# Default to Agentic AI if not selected
+# DEFAULT_TRACK = "Agentic AI" # REMOVED: User must select explicitly
+TRACKS = ["Agentic AI", "Cloud", "Cybersecurity", "Data Analyst"]
 
-def get_latest_master_file():
-    """Finds the latest version of the master file based on modification time."""
-    base_name_no_ext = os.path.splitext(BASE_MASTER_FILENAME)[0]
-    search_pattern = os.path.join(MASTER_DIR, f"{base_name_no_ext}*.xlsx")
+def get_track_paths(track_name):
+    base_dir = f"src/data/master/{track_name}"
+    
+    # Find the excel file in this directory dynamically
+    # We look for ANY .xlsx that isn't a temp file
+    search_pattern = os.path.join(base_dir, "*.xlsx")
     files = glob.glob(search_pattern)
+    files = [f for f in files if not os.path.basename(f).startswith("~$")]
+    
+    master_file = files[0] if files else None
+    
+    return {
+        "MASTER_DIR": base_dir,
+        "MASTER_FILE_PATH": master_file,
+        "TOPICS_JSON_PATH": os.path.join(base_dir, "topics.json"),
+        "COLUMNS_JSON_PATH": os.path.join(base_dir, "price_duration_columns.json")
+    }
+
+def get_latest_master_file(track_name):
+    """Finds the latest version of the master file based on modification time."""
+    base_dir = f"src/data/master/{track_name}"
+    search_pattern = os.path.join(base_dir, "*.xlsx")
+    files = glob.glob(search_pattern)
+    files = [f for f in files if not os.path.basename(f).startswith("~$")]
     
     if not files:
         return None
@@ -194,6 +212,67 @@ def get_next_version_path(current_path):
     return new_base + ext
 
 # --- RESULTS VIEW ---
+# --- SIDEBAR & CONFIGURATION (Global) ---
+with st.sidebar:
+    logger.info("Sidebar rendering...")
+    st.title("Configuration")
+    
+    # --- TRACK SELECTION ---
+    # User Request: No default track. User must choose.
+    selected_track = st.selectbox(
+        "Select Track", 
+        TRACKS, 
+        index=None,
+        placeholder="Choose a track...",
+        key="selected_track_input"
+    )
+    
+    # Check if track changed to reset state
+    if "current_track" not in st.session_state:
+        st.session_state.current_track = selected_track
+    elif st.session_state.current_track != selected_track:
+        st.session_state.current_track = selected_track
+        # Turn off any active analysis results when switching tracks
+        st.session_state.analysis_results = None
+        st.session_state.competitor_name = ""
+        st.session_state.course_name = ""
+        st.session_state.website_link = ""
+        st.session_state.master_file_updated = False
+        st.rerun()
+
+    # STOP if no track selected
+    if not selected_track:
+        st.warning("👈 Please select a Track from the sidebar to proceed.")
+        st.stop()
+
+    # Update Paths based on selection
+    paths = get_track_paths(selected_track)
+    MASTER_DIR = paths["MASTER_DIR"]
+    MASTER_FILE_PATH = paths["MASTER_FILE_PATH"]
+    TOPICS_JSON_PATH = paths["TOPICS_JSON_PATH"]
+    COLUMNS_JSON_PATH = paths["COLUMNS_JSON_PATH"]
+    
+    st.divider()
+
+    # API Key Strategy: User input > .env > Error
+    gemini_key_input = st.text_input("Gemini API Key", type="password", placeholder="Paste key here (or leave empty to use .env)", value="")
+    st.markdown("[Get a Free Key](https://ai.google.dev/gemini-api/docs/api-key)", unsafe_allow_html=True)
+
+    # Model Selection
+    model_options = ["gemini-2.5-flash", "gemini-2.5-pro"]
+    selected_model = st.selectbox("AI Model", model_options, index=0)
+
+    st.divider()
+    st.markdown("""
+    ### Workflow:
+    
+    1. Select Track (Agentic AI, Cloud, etc.)
+    2. Upload Competitor PDF, URL, or Paste Text
+    3. Run Analysis
+    4. Review, Edit, and Download Updated Excel
+    5. Update Master file with competitor analysis (Manual)
+    """)
+
 # --- RESULTS VIEW ---
 if st.session_state.analysis_results:
     competitor_display = st.session_state.competitor_name
@@ -216,7 +295,7 @@ if st.session_state.analysis_results:
         if st.session_state.master_file_updated:
              # Use the dynamically saved path as the TRUE source
              download_path = st.session_state.get("last_updated_master_path", MASTER_FILE_PATH)
-             if os.path.exists(download_path):
+             if download_path and os.path.exists(download_path):
                  with open(download_path, "rb") as f:
                     st.download_button(
                         label=f"📥 Download",
@@ -299,7 +378,7 @@ if st.session_state.analysis_results:
                     }
                     
                     # Write to Disk
-                    target_path = st.session_state.get("last_updated_master_path") or get_latest_master_file()
+                    target_path = st.session_state.get("last_updated_master_path") or get_latest_master_file(st.session_state.current_track)
                     
                     if target_path:
                         try:
@@ -382,28 +461,6 @@ if st.session_state.analysis_results:
 
 # --- INPUT VIEW ---
 else:
-    # Sidebar
-    with st.sidebar:
-        logger.info("Sidebar rendering...")
-        st.title("Configuration")
-        # API Key Strategy: User input > .env > Error
-        gemini_key_input = st.text_input("Gemini API Key", type="password", placeholder="Paste key here (or leave empty to use .env)", value="")
-        st.markdown("[Get a Free Key](https://ai.google.dev/gemini-api/docs/api-key)", unsafe_allow_html=True)
-    
-        # Model Selection
-        model_options = ["gemini-2.5-flash", "gemini-2.5-pro"]
-        selected_model = st.selectbox("AI Model", model_options, index=0)
-    
-        st.divider()
-        st.markdown("""
-        ### Workflow:
-        
-        1. Upload Competitor PDF, URL, or Paste Text
-        2. Run Analysis
-        3. Review, Edit, and Download Updated Excel
-        4. Update Master file with competitor analysis (Manual)
-        """)
-
     # Main Content
     col1, col2 = st.columns([1, 1], gap="large")
 
@@ -453,7 +510,8 @@ else:
             gemini_key = gemini_key_input if gemini_key_input else os.getenv("GEMINI_KEY")
             
             # Dynamic Master File Check
-            current_master_path = get_latest_master_file()
+            # Use the paths determined by sidebar selection
+            current_master_path = get_latest_master_file(st.session_state.current_track)
             
             # Extract competitor name from website URL or use course name as fallback
             competitor_name = None
@@ -475,7 +533,7 @@ else:
             with st.spinner(f"Analyzing {competitor_name}..."):
                 try:
                     # 1. Load Topics from JSON (Fast)
-                    logger.info("Loading topics from JSON...")
+                    logger.info(f"Loading topics from JSON: {TOPICS_JSON_PATH}")
                     with open(TOPICS_JSON_PATH, 'r') as f:
                         topics = json.load(f)
                     st.success(f"Loaded {len(topics)} topics from Cache.")
@@ -619,10 +677,10 @@ else:
                 st.session_state.trigger_analysis_continuation = False
                 
             gemini_key = gemini_key_input if gemini_key_input else os.getenv("GEMINI_KEY")
-            current_master_path = get_latest_master_file()
+            current_master_path = get_latest_master_file(st.session_state.current_track)
 
             if not current_master_path or not os.path.exists(current_master_path):
-                st.error(f"Master file not found in {MASTER_DIR}. Please ensure '{BASE_MASTER_FILENAME}' exists.")
+                st.error(f"Master file not found in {MASTER_DIR}. Please ensure a valid Excel file exists for this track.")
             elif not os.path.exists(TOPICS_JSON_PATH):
                 st.error(f"Topics JSON not found at {TOPICS_JSON_PATH}. Please run regeneration script.")
             elif not os.path.exists(COLUMNS_JSON_PATH):
