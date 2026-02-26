@@ -164,7 +164,7 @@ import re
 # Dynamic mapping based on selection
 # Default to Agentic AI if not selected
 # DEFAULT_TRACK = "Agentic AI" # REMOVED: User must select explicitly
-TRACKS = ["Agentic AI", "Cloud", "Cybersecurity", "Data Analyst"]
+TRACKS = ["Agentic AI", "Cloud", "Cybersecurity", "Data Analyst", "Digital Marketing"]
 
 def get_track_paths(track_name):
     base_dir = f"src/data/master/{track_name}"

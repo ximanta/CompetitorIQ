@@ -1,812 +1,817 @@
 [
   {
-    "topic": "What is Linux & Distributions",
+    "topic": "Digital vs. traditional marketing",
+    "decision": "Yes",
+    "reasoning": "The module 'Introduction to Digital Marketing and Analytics' covers 'Role of digital in marketing' and 'Impact of digital on the 4Ps,' which implies a comparison with traditional marketing."
+  },
+  {
+    "topic": "Inbound vs outbound marketing",
+    "decision": "No",
+    "reasoning": "The content covers elements that could be categorized as inbound (e.g., content marketing, SEO) and outbound (e.g., paid media, social media advertising), but the specific concepts of 'Inbound vs outbound marketing' are not explicitly mentioned or clearly implied as a distinct topic of study."
+  },
+  {
+    "topic": "4Ps/5Ps of marketing",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Impact of digital on the 4Ps' in Module 1 and a hands-on activity on 'Transforming the Four Ps to Incorporate Digital Technologies.'"
+  },
+  {
+    "topic": "Influencer marketing",
+    "decision": "Yes",
+    "reasoning": "Module 5 is explicitly titled 'Influencer Marketing' and covers various aspects of it."
+  },
+  {
+    "topic": "Video marketing",
     "decision": "Unsure",
-    "reasoning": "The content mentions 'Setting Up an Ubuntu Virtual Machine in VirtualBox', indicating the use of a Linux distribution (Ubuntu). However, it does not explicitly define 'What is Linux' or discuss different distributions as a dedicated topic, making coverage ambiguous."
+    "reasoning": "While 'Short-form video (Reels, Shorts)' and 'Live streaming strategies' are mentioned under social media, and 'AI-driven visual marketing' is noted, there isn't a clear, dedicated topic or module for 'Video marketing' as a whole, making it ambiguous whether comprehensive coverage is provided."
   },
   {
-    "topic": "Linux File System Structure (/, /home, /etc)",
+    "topic": "Voice search optimization",
     "decision": "No",
-    "reasoning": "No explicit mention of Linux file system structure or its specific directories was found in the content."
+    "reasoning": "No relevant mention of 'Voice search optimization' was found in the content."
   },
   {
-    "topic": "Basic Linux Commands (ls, cd, cp, mv)",
+    "topic": "UI vs. UX",
     "decision": "No",
-    "reasoning": "No explicit mention of basic Linux commands was found in the content."
+    "reasoning": "No relevant mention of 'UI vs. UX' was found in the content."
   },
   {
-    "topic": "File Permissions & Ownership",
+    "topic": "Website creation with WordPress",
     "decision": "No",
-    "reasoning": "No explicit mention of file permissions or ownership was found in the content."
+    "reasoning": "No specific mention of 'Website creation with WordPress' or any other website creation platform was found."
   },
   {
-    "topic": "Users and Groups",
+    "topic": "Behavioral analytics & marketing",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Changing consumer behaviour' in Module 2, 'Behavioural analysis' in Module 9, and 'Analyse digital customer behaviour' as a skill gained, indicating coverage of behavioral analytics."
+  },
+  {
+    "topic": "Marketing funnel evolution",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'The digital marketing funnel' in Module 2, 'The Pirate funnel' in Module 6, and 'Analyse a Companys Funnel Strategies' in hands-on activities, indicating coverage of marketing funnels."
+  },
+  {
+    "topic": "Customer personas & digital persona",
+    "decision": "Yes",
+    "reasoning": "Module 2 explicitly covers 'User personas,' which directly maps to 'Customer personas.'"
+  },
+  {
+    "topic": "AI-assisted personas",
     "decision": "No",
-    "reasoning": "No explicit mention of users and groups was found in the content."
+    "reasoning": "Although 'AI' and 'User personas' are mentioned, there is no explicit or implied coverage of 'AI-assisted personas.'"
   },
   {
-    "topic": "Package Management (apt, yum)",
+    "topic": "Buyer journey mapping",
+    "decision": "Yes",
+    "reasoning": "Module 2 is titled 'Understanding Customers and Their Journey,' which clearly implies coverage of buyer journey mapping."
+  },
+  {
+    "topic": "Content strategy development",
+    "decision": "Yes",
+    "reasoning": "Module 3 covers 'Role in digital marketing strategy' for content marketing and 'Content marketing strategies across digital channels,' and the Stukent simulation mentions 'Develop targeted content strategies,' explicitly covering content strategy development."
+  },
+  {
+    "topic": "Content creation frameworks",
+    "decision": "Yes",
+    "reasoning": "Module 3 covers 'Content creation and optimisation,' and Module 12 covers 'Content generation with AI,' which implies the use of frameworks for content creation."
+  },
+  {
+    "topic": "Storytelling techniques",
     "decision": "No",
-    "reasoning": "No explicit mention of package management tools like apt or yum was found in the content."
+    "reasoning": "No relevant mention of 'Storytelling techniques' was found in the content as a topic of study."
   },
   {
-    "topic": "Process Management (ps, top, kill)",
-    "decision": "No",
-    "reasoning": "No explicit mention of process management tools like ps, top, or kill was found in the content."
+    "topic": "Blog/article writing",
+    "decision": "Yes",
+    "reasoning": "'Content creation and optimisation' is covered in Module 3, and 'AI-driven content creation' is mentioned, which would encompass blog/article writing. 'Blogs' are also mentioned in the context of AI-powered marketing."
   },
   {
-    "topic": "Disk & Storage Basics",
+    "topic": "Video content creation",
     "decision": "Unsure",
-    "reasoning": "Module 2 mentions 'Enabling Technologies - Storage' and 'Cloud Storage' is listed as a skill. While storage is covered in a cloud context, it's unclear if general 'Disk & Storage Basics' are taught beyond cloud-specific implementations."
+    "reasoning": "While 'Short-form video (Reels, Shorts)' and 'AI-driven visual marketing' are mentioned, there isn't a clear, dedicated topic or module for 'Video content creation' as a comprehensive skill, making it ambiguous."
   },
   {
-    "topic": "Networking Basics in Linux (ip, ping)",
+    "topic": "Podcast marketing",
     "decision": "No",
-    "reasoning": "While 'Enabling Technologies - Networking' is mentioned, there is no explicit reference to Linux-specific networking basics or tools like ip and ping."
+    "reasoning": "No relevant mention of 'Podcast marketing' was found in the content."
   },
   {
-    "topic": "Shell & Terminal Usage",
-    "decision": "No",
-    "reasoning": "No explicit mention of teaching shell or terminal usage as a dedicated topic was found, although practical activities might implicitly involve it."
-  },
-  {
-    "topic": "Python Overview & Use Cases",
+    "topic": "Content distribution strategies",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'University-level programming experience in Python' as a prerequisite and 'Apply cloud computing principles through hands-on projects using Python'. Python is extensively used for 'hands-on cloud-based development' and 'practical coding exercises', implying its overview and use cases in this context."
+    "reasoning": "Module 3 covers 'Content marketing strategies across digital channels,' which implies content distribution strategies."
   },
   {
-    "topic": "Variables and Data Types",
+    "topic": "Content repurposing",
     "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'Variables and Data Types' as a topic; it is assumed as a prerequisite."
+    "reasoning": "No relevant mention of 'Content repurposing' was found in the content."
   },
   {
-    "topic": "Input and Output",
+    "topic": "Content calendars",
     "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'Input and Output' as a topic; it is assumed as a prerequisite."
+    "reasoning": "No relevant mention of 'Content calendars' was found in the content."
   },
   {
-    "topic": "Conditional Statements",
+    "topic": "Content clustering",
     "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'Conditional Statements' as a topic; it is assumed as a prerequisite."
+    "reasoning": "No relevant mention of 'Content clustering' was found in the content."
   },
   {
-    "topic": "Loops (for, while)",
-    "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'Loops' as a topic; it is assumed as a prerequisite."
+    "topic": "On-page SEO",
+    "decision": "Yes",
+    "reasoning": "'SEO strategy' is explicitly covered in Module 3, and 'SEO' is mentioned multiple times as a core skill, which implies coverage of fundamental SEO components like on-page SEO."
   },
   {
-    "topic": "Functions",
-    "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'Functions' as a topic; it is assumed as a prerequisite."
+    "topic": "Off-page SEO",
+    "decision": "Yes",
+    "reasoning": "'SEO strategy' is explicitly covered in Module 3, and 'SEO' is mentioned multiple times as a core skill, which implies coverage of fundamental SEO components like off-page SEO."
   },
   {
-    "topic": "Lists, Tuples, and Dictionaries",
-    "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching these specific data structures as a topic; they are assumed as a prerequisite."
+    "topic": "Technical SEO",
+    "decision": "Yes",
+    "reasoning": "'SEO strategy' is explicitly covered in Module 3, and 'SEO' is mentioned multiple times as a core skill, which implies coverage of fundamental SEO components like technical SEO."
   },
   {
-    "topic": "File Handling",
-    "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'File Handling' as a topic; it is assumed as a prerequisite."
+    "topic": "Google algorithms & ranking factors",
+    "decision": "Yes",
+    "reasoning": "'SEO strategy' and 'SEM' are explicitly covered, and 'Google Ads' is a specific tool. Understanding Google algorithms and ranking factors is implicitly necessary for effective SEO and SEM."
   },
   {
-    "topic": "Working with JSON and API data handling",
+    "topic": "Asset optimization",
     "decision": "Unsure",
-    "reasoning": "'Application Programming Interface (API)' is listed as a skill. However, there is no explicit mention of working with JSON or specific techniques for API data handling, making coverage ambiguous."
+    "reasoning": "While 'Content creation and optimisation' and 'Campaign optimisation' are mentioned, 'Asset optimization' is not explicitly stated, making it unclear if this specific aspect is covered beyond general optimization."
   },
   {
-    "topic": "Python requests library for API communication",
-    "decision": "No",
-    "reasoning": "No explicit mention of the Python 'requests' library was found in the content."
-  },
-  {
-    "topic": "Regular expressions for security log analysis",
-    "decision": "No",
-    "reasoning": "No explicit mention of regular expressions or security log analysis was found in the content."
-  },
-  {
-    "topic": "Virtual environments and dependency management basics",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Setting Up a Python Virtual Environment' in Module 1, which directly covers virtual environments."
-  },
-  {
-    "topic": "Python logging module for application monitoring",
-    "decision": "No",
-    "reasoning": "No explicit mention of the Python 'logging' module or application monitoring using it was found in the content."
-  },
-  {
-    "topic": "Command line arguments using argparse module",
-    "decision": "No",
-    "reasoning": "No explicit mention of command line arguments or the 'argparse' module was found in the content."
-  },
-  {
-    "topic": "Introduction to object oriented programming concepts",
-    "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching object-oriented programming concepts."
-  },
-  {
-    "topic": "Basic multithreading for automation scripts",
-    "decision": "No",
-    "reasoning": "No explicit mention of multithreading was found in the content."
-  },
-  {
-    "topic": "Working with CSV files for cloud reports",
-    "decision": "No",
-    "reasoning": "No explicit mention of working with CSV files was found in the content."
-  },
-  {
-    "topic": "Error Handling (Exceptions)",
-    "decision": "No",
-    "reasoning": "Python is used, but there is no explicit mention of teaching 'Error Handling (Exceptions)' as a topic; it is assumed as a prerequisite."
-  },
-  {
-    "topic": "Basic Python Scripting",
-    "decision": "Yes",
-    "reasoning": "The content mentions 'practical coding exercises using Python' and 'hands-on cloud-based development', which implies basic Python scripting for tasks."
-  },
-  {
-    "topic": "What is a Database & DBMS",
-    "decision": "Yes",
-    "reasoning": "Module 3 covers 'Cloud Data Infrastructure' and 'Relational Databases - Introduction'. Module 4 covers 'Databases in Cloud Computing'. 'Database Management' and 'Database Design' are listed as skills. This explicitly covers what a database is and implicitly covers DBMS through discussion of specific database technologies."
-  },
-  {
-    "topic": "MySQL Architecture",
+    "topic": "Link building",
     "decision": "Unsure",
-    "reasoning": "MySQL is discussed and compared with other database technologies, but its specific architecture is not explicitly detailed as a learning topic, making coverage ambiguous."
+    "reasoning": "While 'SEO strategy' is covered, 'Link building' is a specific sub-topic of off-page SEO that is not explicitly mentioned, leading to uncertainty about its direct coverage."
   },
   {
-    "topic": "Creating Databases and Tables",
+    "topic": "E-commerce SEO",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'E-commerce SEO' was found in the content."
+  },
+  {
+    "topic": "SEO audits",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'SEO audits' was found in the content."
+  },
+  {
+    "topic": "Conversion rate optimization (CRO)",
+    "decision": "Yes",
+    "reasoning": "The content mentions 'Campaign optimisation' multiple times, 'Conversion modelling' in Module 9, and 'improve email conversions,' which collectively imply coverage of conversion rate optimization."
+  },
+  {
+    "topic": "Answer Engine Optimization (AEO)",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Answer Engine Optimization (AEO)' was found in the content."
+  },
+  {
+    "topic": "Keyword research & mapping",
+    "decision": "Yes",
+    "reasoning": "'SEO strategy' and 'SEM' are explicitly covered, and 'Google Ads' is a specific tool. Keyword research and mapping are implicitly fundamental to these topics."
+  },
+  {
+    "topic": "Generative Engine Optimization (GEO)",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Generative Engine Optimization (GEO)' was found in the content."
+  },
+  {
+    "topic": "Schema markup",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Schema markup' was found in the content."
+  },
+  {
+    "topic": "Digital authority & E-E-A-T",
+    "decision": "No",
+    "reasoning": "No explicit mention of 'Digital authority & E-E-A-T' was found, and related terms like 'brand positioning' are too generic to confirm coverage."
+  },
+  {
+    "topic": "Reputation management",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Reputation management' was found in the content."
+  },
+  {
+    "topic": "YouTube SEO",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'YouTube SEO' was found in the content."
+  },
+  {
+    "topic": "Pay-per-click (PPC) fundamentals",
+    "decision": "Yes",
+    "reasoning": "Module 4 explicitly covers 'Pay Per Click (PPC) fundamentals.'"
+  },
+  {
+    "topic": "Google Ads platform",
+    "decision": "Yes",
+    "reasoning": "'Google Ads' is explicitly mentioned in Module 4 and as a topic for live masterclasses."
+  },
+  {
+    "topic": "Ad ranking & positioning",
+    "decision": "Yes",
+    "reasoning": "'Google Ads' and 'SEM' are explicitly covered, and understanding ad ranking and positioning is implicitly fundamental to these topics."
+  },
+  {
+    "topic": "Bidding strategies & budget management",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Effectively manage campaign budgets' and 'plan budgets' as skills, and bidding strategies are implicitly covered under PPC and Google Ads."
+  },
+  {
+    "topic": "Keyword research for paid search",
+    "decision": "Yes",
+    "reasoning": "'SEM' and 'Google Ads' are explicitly covered, and keyword research is implicitly fundamental for effective paid search campaigns."
+  },
+  {
+    "topic": "Ad extensions",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Ad extensions' was found in the content."
+  },
+  {
+    "topic": "Automation rules",
     "decision": "Unsure",
-    "reasoning": "Module 3 includes an 'SQL Refresher' and 'Database Design' is a listed skill. While these suggest database creation, the explicit teaching of 'Creating Databases and Tables' is not detailed enough to confirm."
+    "reasoning": "While 'CRM automation' and 'AI-driven automation' are covered, 'Automation rules' specifically for advertising campaigns are not explicitly mentioned, leading to uncertainty."
   },
   {
-    "topic": "Data Types in MySQL",
+    "topic": "Dynamic keyword insertion",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Dynamic keyword insertion' was found in the content."
+  },
+  {
+    "topic": "Remarketing & retargeting ads",
+    "decision": "Yes",
+    "reasoning": "'Remarketing' is explicitly mentioned in learner reviews as a topic covered and made easy to understand."
+  },
+  {
+    "topic": "Shopping ads & smart campaigns",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Shopping ads & smart campaigns' was found in the content."
+  },
+  {
+    "topic": "Campaign performance optimization",
+    "decision": "Yes",
+    "reasoning": "'Campaign optimisation' is mentioned multiple times, and the Stukent simulation includes 'Monitor and optimise key performance metrics,' explicitly covering campaign performance optimization."
+  },
+  {
+    "topic": "Paid campaign analysis",
+    "decision": "Yes",
+    "reasoning": "Module 8 covers 'Evaluating Marketing Campaigns: Metrics and ROI,' and 'Paid social advertising' is mentioned, implying analysis of paid campaigns."
+  },
+  {
+    "topic": "Conversion funnel optimization",
+    "decision": "Yes",
+    "reasoning": "The content covers 'The digital marketing funnel' and 'Conversion modelling,' and general 'Campaign optimisation,' which together imply coverage of conversion funnel optimization."
+  },
+  {
+    "topic": "CRO benchmarks",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'CRO benchmarks' was found in the content."
+  },
+  {
+    "topic": "Landing page design & optimization",
+    "decision": "No",
+    "reasoning": "No explicit mention of 'Landing page design & optimization' was found, and 'website optimisation' is too generic to confirm this specific topic."
+  },
+  {
+    "topic": "Ad tracking & measurement",
+    "decision": "Yes",
+    "reasoning": "Module 10 covers 'Monitoring and measuring campaign performance,' and Module 8 covers 'Digital analytics - Key KPIs,' which implicitly includes ad tracking and measurement."
+  },
+  {
+    "topic": "Facebook Pixel implementation",
     "decision": "Unsure",
-    "reasoning": "An 'SQL Refresher' is mentioned, which would typically include data types. However, 'Data Types in MySQL' is not explicitly listed as a topic, making coverage ambiguous."
+    "reasoning": "While 'Facebook Ads Campaign' is a hands-on activity, 'Facebook Pixel implementation' is not explicitly mentioned, making it uncertain if this specific technical implementation is covered."
   },
   {
-    "topic": "CRUD Operations",
+    "topic": "Attribution modeling",
     "decision": "Yes",
-    "reasoning": "The content mentions an 'SQL Refresher' and 'MongoDB Installation, Connection, and Querying', which inherently involve Create, Read, Update, and Delete (CRUD) operations for databases."
+    "reasoning": "'Attribution modelling' is explicitly mentioned in Module 9 and in learner reviews."
   },
   {
-    "topic": "Primary and Foreign Keys",
+    "topic": "A/B testing methodology",
     "decision": "Yes",
-    "reasoning": "Module 3 explicitly covers 'Relational Databases - Relationships', which directly includes the concepts of primary and foreign keys."
+    "reasoning": "'A/B testing' is explicitly mentioned in learner reviews, and 'The importance of digital experiments' in Module 8 further supports its coverage."
   },
   {
-    "topic": "SQL Constraints",
+    "topic": "Multivariate testing",
+    "decision": "No",
+    "reasoning": "Although A/B testing is mentioned, 'Multivariate testing' is not explicitly covered, and it's a distinct methodology."
+  },
+  {
+    "topic": "User testing methodologies",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'User testing methodologies' was found in the content."
+  },
+  {
+    "topic": "Personalization strategies",
+    "decision": "Yes",
+    "reasoning": "'Personalisation and customer AI-driven visual marketing' in Module 12 and 'AI for Personalised Marketing' in masterclasses explicitly cover personalization strategies."
+  },
+  {
+    "topic": "Social media channels & platform landscape",
+    "decision": "Yes",
+    "reasoning": "'Social media marketing' is explicitly covered, and specific platforms like Facebook and Twitter are mentioned, implying coverage of social media channels and their landscape."
+  },
+  {
+    "topic": "Brand management across channels",
+    "decision": "Yes",
+    "reasoning": "The content mentions 'Brand positioning' as a skill, 'Content marketing strategies across digital channels,' and 'full-funnel strategies,' which collectively imply brand management across channels."
+  },
+  {
+    "topic": "Social media strategy development",
+    "decision": "Yes",
+    "reasoning": "'Social media marketing' is explicitly mentioned, 'AI for Social Campaigns' is a masterclass topic, and 'social media strategy' is noted in learner reviews, confirming coverage."
+  },
+  {
+    "topic": "KPI measurement & analytics",
+    "decision": "Yes",
+    "reasoning": "Module 8 explicitly covers 'Objectives and Key Results (OKRs) in digital marketing' and 'Digital analytics - Key KPIs: The Touchpoint Flow Approach,' directly addressing KPI measurement and analytics."
+  },
+  {
+    "topic": "Organic social media marketing",
+    "decision": "Yes",
+    "reasoning": "'Social media marketing' is explicitly covered, and the mention of 'Paid social advertising' implies a distinction, thus covering organic social media marketing. 'Social listening' also points to organic efforts."
+  },
+  {
+    "topic": "Paid social advertising",
+    "decision": "Yes",
+    "reasoning": "Module 4 explicitly covers 'Social media advertising,' and 'Paid social advertising' is mentioned in learner reviews, with specific hands-on activities for 'Facebook Ads Campaign' and 'Twitter Ads Campaign.'"
+  },
+  {
+    "topic": "Platform-specific ads (Facebook, Instagram, LinkedIn)",
     "decision": "Unsure",
-    "reasoning": "An 'SQL Refresher' is mentioned, which might cover SQL constraints. However, 'SQL Constraints' is not explicitly listed as a topic, making coverage ambiguous."
+    "reasoning": "While 'Facebook Ads Campaign' and 'Twitter Ads Campaign' are explicitly mentioned, other platform-specific ads like Instagram or LinkedIn are not, leading to uncertainty about comprehensive coverage."
   },
   {
-    "topic": "Joins (Basic)",
+    "topic": "Mobile-optimized ad content",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Mobile-optimized ad content' was found in the content."
+  },
+  {
+    "topic": "AI-assisted content creation",
+    "decision": "Yes",
+    "reasoning": "Module 12 explicitly covers 'Content generation with AI,' and the content mentions using 'Generative AI tools like ChatGPT and DALLE to create content,' directly addressing AI-assisted content creation."
+  },
+  {
+    "topic": "Influencer outreach & partnerships",
+    "decision": "Yes",
+    "reasoning": "Module 5 covers 'Influencer marketing campaigns' and 'Choosing the right influencers for your brand,' which implicitly includes influencer outreach and partnerships."
+  },
+  {
+    "topic": "Meta Ads Manager",
+    "decision": "Yes",
+    "reasoning": "'Facebook Ads Campaign' is a hands-on activity, and Meta Ads Manager is the primary platform for managing Facebook Ads, implying its use."
+  },
+  {
+    "topic": "Twitter (X)",
+    "decision": "Yes",
+    "reasoning": "'Twitter Ads Campaign' is explicitly mentioned as a hands-on activity."
+  },
+  {
+    "topic": "WhatsApp Marketing",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'WhatsApp Marketing' as a topic of study was found in the content."
+  },
+  {
+    "topic": "Short-form video (Reels, Shorts)",
+    "decision": "Yes",
+    "reasoning": "'Short-form video (Reels, Shorts)' is explicitly mentioned in learner reviews as a topic covered."
+  },
+  {
+    "topic": "Live streaming strategies",
+    "decision": "Yes",
+    "reasoning": "'Live streaming strategies' is explicitly mentioned in learner reviews as a topic covered."
+  },
+  {
+    "topic": "Community building & management",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Community building & management' was found in the content."
+  },
+  {
+    "topic": "User-generated content campaigns",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'User-generated content campaigns' was found in the content."
+  },
+  {
+    "topic": "Video marketing strategy",
     "decision": "Unsure",
-    "reasoning": "An 'SQL Refresher' is mentioned, which would typically include basic joins. However, 'Joins (Basic)' is not explicitly listed as a topic, making coverage ambiguous."
+    "reasoning": "While specific video formats like 'Short-form video (Reels, Shorts)' and 'Live streaming strategies' are mentioned, a comprehensive 'Video marketing strategy' is not explicitly covered, leading to uncertainty."
   },
   {
-    "topic": "User management and role based access control",
+    "topic": "YouTube marketing",
     "decision": "No",
-    "reasoning": "No explicit mention of user management or role-based access control for databases was found in the content."
+    "reasoning": "No relevant mention of 'YouTube marketing' was found in the content."
   },
   {
-    "topic": "MySQL privileges and permission management basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of MySQL privileges or permission management was found in the content."
-  },
-  {
-    "topic": "SQL injection concepts and prevention techniques",
-    "decision": "No",
-    "reasoning": "No explicit mention of SQL injection or prevention techniques was found in the content."
-  },
-  {
-    "topic": "Stored procedures and basic database functions",
-    "decision": "No",
-    "reasoning": "No explicit mention of stored procedures or basic database functions was found in the content."
-  },
-  {
-    "topic": "Views for secure data abstraction",
-    "decision": "No",
-    "reasoning": "No explicit mention of database views was found in the content."
-  },
-  {
-    "topic": "Transactions and ACID property fundamentals",
+    "topic": "Short-form video creation",
     "decision": "Yes",
-    "reasoning": "Module 4 explicitly covers 'Acid vs. Base', which includes the fundamentals of ACID properties for transactions."
+    "reasoning": "'Short-form video (Reels, Shorts)' is explicitly mentioned, and 'Content creation' is a general topic, implying coverage of short-form video creation."
   },
   {
-    "topic": "Basic query optimization using EXPLAIN",
+    "topic": "Long-form video content",
     "decision": "No",
-    "reasoning": "No explicit mention of query optimization techniques like using EXPLAIN was found in the content."
+    "reasoning": "No relevant mention of 'Long-form video content' was found in the content."
   },
   {
-    "topic": "Performance monitoring using slow query logs",
+    "topic": "Video advertising formats",
     "decision": "No",
-    "reasoning": "No explicit mention of performance monitoring using slow query logs was found in the content."
+    "reasoning": "No relevant mention of 'Video advertising formats' was found in the content."
   },
   {
-    "topic": "Database connectivity using Python integration",
+    "topic": "Video editing basics",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Video editing basics' was found in the content."
+  },
+  {
+    "topic": "Live video marketing",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Working with Python and MySQL', 'Working with Python and MongoDB', and 'Working with Python and Neo4j', which directly covers database connectivity using Python."
+    "reasoning": "'Live streaming strategies' is explicitly mentioned in learner reviews, which is a direct form of live video marketing."
   },
   {
-    "topic": "Introduction to managed databases on AWS RDS",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS RDS or other specific managed database services was found in the content."
-  },
-  {
-    "topic": "Indexes (Basics)",
-    "decision": "No",
-    "reasoning": "While 'optimal performance' is mentioned in relation to schemas, there is no explicit mention of database indexes."
-  },
-  {
-    "topic": "Backup and Restore",
-    "decision": "No",
-    "reasoning": "No explicit mention of database backup and restore procedures was found in the content."
-  },
-  {
-    "topic": "What is a Network",
+    "topic": "Email marketing strategy",
     "decision": "Yes",
-    "reasoning": "Module 2 explicitly mentions 'Enabling Technologies - Networking', which implies covering the fundamental concept of what a network is."
+    "reasoning": "The content explicitly mentions 'Email marketing automation with the Mailmodo Certification' and 'email marketing' in FAQs, implying coverage of email marketing strategy."
   },
   {
-    "topic": "Types of Networks (LAN, WAN)",
+    "topic": "Email campaign execution (Mailchimp, etc.)",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Email marketing automation with the Mailmodo Certification,' which involves executing email campaigns using a specific tool (Mailmodo)."
+  },
+  {
+    "topic": "Email automation & workflows",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Email marketing automation with the Mailmodo Certification' and details features like 'Email automation, user journey creation, auto-trigger schedule,' directly covering email automation and workflows."
+  },
+  {
+    "topic": "Lead generation & nurturing",
     "decision": "No",
-    "reasoning": "While 'Enabling Technologies - Networking' is mentioned, there is no explicit reference to different types of networks like LAN or WAN."
+    "reasoning": "No explicit mention of 'Lead generation & nurturing' was found, and related concepts are too generic to confirm specific coverage."
   },
   {
-    "topic": "OSI Model",
+    "topic": "CRM pipeline creation & management",
+    "decision": "Yes",
+    "reasoning": "'CRM automation' is explicitly mentioned multiple times, which implies coverage of CRM pipeline creation and management as a core function of CRM."
+  },
+  {
+    "topic": "Automated email campaigns",
+    "decision": "Yes",
+    "reasoning": "The content explicitly covers 'Email automation & workflows' through the Mailmodo certification, which directly includes automated email campaigns."
+  },
+  {
+    "topic": "Email A/B testing",
+    "decision": "Yes",
+    "reasoning": "'A/B testing' is explicitly mentioned in learner reviews, and its application to email campaigns is a standard practice implied by general A/B testing coverage."
+  },
+  {
+    "topic": "Mobile marketing fundamentals",
     "decision": "No",
-    "reasoning": "No explicit mention of the OSI Model was found in the content."
+    "reasoning": "No relevant mention of 'Mobile marketing fundamentals' was found in the content."
   },
   {
-    "topic": "TCP/IP Model",
+    "topic": "Mobile-first design strategies",
     "decision": "No",
-    "reasoning": "No explicit mention of the TCP/IP Model was found in the content."
+    "reasoning": "No relevant mention of 'Mobile-first design strategies' was found in the content."
   },
   {
-    "topic": "IPv4 subnetting practical exercises using real scenarios",
+    "topic": "App store optimization (ASO)",
     "decision": "No",
-    "reasoning": "No explicit mention of IPv4 subnetting or practical exercises was found in the content."
+    "reasoning": "No relevant mention of 'App store optimization (ASO)' was found in the content."
   },
   {
-    "topic": "Subnetting Basics",
+    "topic": "App monetization strategies",
     "decision": "No",
-    "reasoning": "No explicit mention of subnetting basics was found in the content."
+    "reasoning": "No relevant mention of 'App monetization strategies' was found in the content."
   },
   {
-    "topic": "Introduction to IPv6 addressing fundamentals",
-    "decision": "No",
-    "reasoning": "No explicit mention of IPv6 addressing was found in the content."
-  },
-  {
-    "topic": "Static and dynamic routing configuration basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of routing configuration was found in the content."
-  },
-  {
-    "topic": "VLAN concepts and inter VLAN routing",
-    "decision": "No",
-    "reasoning": "No explicit mention of VLAN concepts was found in the content."
-  },
-  {
-    "topic": "Network address translation configuration basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of Network Address Translation (NAT) was found in the content."
-  },
-  {
-    "topic": "Access control lists configuration fundamentals",
-    "decision": "No",
-    "reasoning": "No explicit mention of Access Control Lists (ACLs) was found in the content."
-  },
-  {
-    "topic": "Packet capture analysis using Wireshark basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of packet capture analysis or Wireshark was found in the content."
-  },
-  {
-    "topic": "Firewall concepts and packet filtering rules",
-    "decision": "No",
-    "reasoning": "No explicit mention of firewall concepts or packet filtering rules was found in the content."
-  },
-  {
-    "topic": "Basic load balancing concepts in networking",
-    "decision": "No",
-    "reasoning": "No explicit mention of load balancing concepts was found in the content."
-  },
-  {
-    "topic": "Common Network Devices",
-    "decision": "No",
-    "reasoning": "No explicit mention of common network devices was found in the content."
-  },
-  {
-    "topic": "DNS, DHCP, HTTP",
-    "decision": "No",
-    "reasoning": "No explicit mention of DNS, DHCP, or HTTP was found in the content."
-  },
-  {
-    "topic": "Ports and Protocols",
-    "decision": "No",
-    "reasoning": "No explicit mention of ports and protocols was found in the content."
-  },
-  {
-    "topic": "Network Troubleshooting Basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of network troubleshooting basics was found in the content."
-  },
-  {
-    "topic": "Linux Boot Process",
-    "decision": "No",
-    "reasoning": "No explicit mention of the Linux boot process was found in the content."
-  },
-  {
-    "topic": "System Services (systemctl)",
-    "decision": "No",
-    "reasoning": "No explicit mention of system services or systemctl was found in the content."
-  },
-  {
-    "topic": "User & Group Management (Advanced)",
-    "decision": "No",
-    "reasoning": "No explicit mention of advanced user and group management was found in the content."
-  },
-  {
-    "topic": "Disk Partitioning & Mounting",
-    "decision": "No",
-    "reasoning": "No explicit mention of disk partitioning or mounting was found in the content."
-  },
-  {
-    "topic": "Logical Volume Management (LVM)",
-    "decision": "No",
-    "reasoning": "No explicit mention of Logical Volume Management (LVM) was found in the content."
-  },
-  {
-    "topic": "Log Management",
-    "decision": "No",
-    "reasoning": "No explicit mention of log management was found in the content."
-  },
-  {
-    "topic": "Job Scheduling (cron, at)",
-    "decision": "No",
-    "reasoning": "No explicit mention of job scheduling tools like cron or at was found in the content."
-  },
-  {
-    "topic": "Linux text processing tools for log analysis",
-    "decision": "No",
-    "reasoning": "No explicit mention of Linux text processing tools for log analysis was found in the content."
-  },
-  {
-    "topic": "Basic shell scripting for task automation",
-    "decision": "No",
-    "reasoning": "While Python scripting is mentioned, there is no explicit mention of basic shell scripting for task automation."
-  },
-  {
-    "topic": "Advanced Linux networking utilities for troubleshooting",
-    "decision": "No",
-    "reasoning": "No explicit mention of advanced Linux networking utilities for troubleshooting was found in the content."
-  },
-  {
-    "topic": "Archive and compression tools for backups",
-    "decision": "No",
-    "reasoning": "No explicit mention of archive and compression tools for backups was found in the content."
-  },
-  {
-    "topic": "Linux boot troubleshooting and recovery basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of Linux boot troubleshooting or recovery was found in the content."
-  },
-  {
-    "topic": "Firewall management using UFW security rules",
-    "decision": "No",
-    "reasoning": "No explicit mention of firewall management using UFW was found in the content."
-  },
-  {
-    "topic": "Secure remote administration using SSH keys",
-    "decision": "No",
-    "reasoning": "No explicit mention of secure remote administration using SSH keys was found in the content."
-  },
-  {
-    "topic": "Backup and restore fundamentals using rsync",
-    "decision": "No",
-    "reasoning": "No explicit mention of backup and restore fundamentals using rsync was found in the content."
-  },
-  {
-    "topic": "Disk usage monitoring and capacity planning",
-    "decision": "No",
-    "reasoning": "No explicit mention of disk usage monitoring or capacity planning was found in the content."
-  },
-  {
-    "topic": "Introduction to SELinux security concepts",
-    "decision": "No",
-    "reasoning": "No explicit mention of SELinux security concepts was found in the content."
-  },
-  {
-    "topic": "Kernel Basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of Kernel Basics was found in the content."
-  },
-  {
-    "topic": "Performance Monitoring",
+    "topic": "Mobile advertising on social platforms",
     "decision": "Unsure",
-    "reasoning": "The content mentions 'optimal performance' for schemas and 'Scaling in Cloud Databases', but a dedicated topic on general 'Performance Monitoring' is not explicitly covered, making coverage ambiguous."
+    "reasoning": "While 'Social media advertising' is covered, 'Mobile advertising on social platforms' is not explicitly distinguished or detailed, making it uncertain if specific mobile ad strategies are taught."
   },
   {
-    "topic": "Linux Security Hardening",
-    "decision": "No",
-    "reasoning": "No explicit mention of Linux security hardening was found in the content."
-  },
-  {
-    "topic": "What is Cloud Computing",
-    "decision": "Yes",
-    "reasoning": "The course title is 'Cloud Computing Fundamentals' and Module 1 is 'Definitions and History of Cloud Computing', explicitly covering this topic."
-  },
-  {
-    "topic": "Cloud Service Models (IaaS, PaaS, SaaS)",
-    "decision": "Yes",
-    "reasoning": "Module 2, 'Cloud Computing Platforms and Service Models', explicitly covers 'Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS)'."
-  },
-  {
-    "topic": "Deployment Models (Public, Private, Hybrid)",
-    "decision": "No",
-    "reasoning": "No explicit mention of cloud deployment models (Public, Private, Hybrid) was found in the content."
-  },
-  {
-    "topic": "Virtual Machines",
-    "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Configure and deploy virtual machines' and Module 2 covers 'Enabling Technologies - Virtualization' and 'Setting Up an Ubuntu Virtual Machine in VirtualBox'."
-  },
-  {
-    "topic": "Storage Services",
-    "decision": "Yes",
-    "reasoning": "Module 2 covers 'Enabling Technologies - Storage' and 'Cloud Storage' is listed as a skill, explicitly covering storage services in a cloud context."
-  },
-  {
-    "topic": "AWS global infrastructure and availability zones concepts",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS global infrastructure or availability zones was found in the content."
-  },
-  {
-    "topic": "Shared responsibility model with AWS practical examples",
-    "decision": "No",
-    "reasoning": "No explicit mention of the shared responsibility model or AWS was found in the content."
-  },
-  {
-    "topic": "Basic hands on EC2 instance creation practice",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS EC2 instances was found in the content."
-  },
-  {
-    "topic": "Introduction to cloud support troubleshooting scenarios",
-    "decision": "No",
-    "reasoning": "No explicit mention of cloud support troubleshooting scenarios was found in the content."
-  },
-  {
-    "topic": "Basic tagging and resource organization strategy",
-    "decision": "No",
-    "reasoning": "No explicit mention of tagging or resource organization strategy was found in the content."
-  },
-  {
-    "topic": "Networking in Cloud",
-    "decision": "Yes",
-    "reasoning": "Module 2 covers 'Enabling Technologies - Networking' in the context of cloud computing, implying coverage of networking in the cloud."
-  },
-  {
-    "topic": "Identity & Access Management (IAM)",
-    "decision": "No",
-    "reasoning": "No explicit mention of Identity & Access Management (IAM) was found in the content."
-  },
-  {
-    "topic": "Basic Cloud Security",
+    "topic": "Marketing automation platforms (HubSpot, Marketo, ActiveCampaign)",
     "decision": "Unsure",
-    "reasoning": "Module 2 mentions 'Benefits and Risks of Cloud Computing', which might touch upon security risks. However, 'Basic Cloud Security' as a dedicated topic is not explicitly covered, making coverage ambiguous."
+    "reasoning": "While 'CRM automation' and 'the power of automation in marketing' are covered, specific 'Marketing automation platforms' like HubSpot or Marketo are not mentioned, leading to uncertainty about tool-specific training beyond CRM."
   },
   {
-    "topic": "Cost Management Basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of cost management basics was found in the content."
-  },
-  {
-    "topic": "Popular Cloud Providers",
-    "decision": "No",
-    "reasoning": "No explicit mention of specific popular cloud providers like AWS, Azure, or GCP was found in the content."
-  },
-  {
-    "topic": "CIA Triad (Confidentiality, Integrity, Availability)",
-    "decision": "No",
-    "reasoning": "No explicit mention of the CIA Triad was found in the content."
-  },
-  {
-    "topic": "Types of Cyber Threats",
-    "decision": "No",
-    "reasoning": "No explicit mention of types of cyber threats was found in the content."
-  },
-  {
-    "topic": "Introduction to security operations center fundamentals",
-    "decision": "No",
-    "reasoning": "No explicit mention of security operations center fundamentals was found in the content."
-  },
-  {
-    "topic": "Basic SIEM concepts and log correlation basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of SIEM concepts or log correlation was found in the content."
-  },
-  {
-    "topic": "Identity and access management in cloud environments",
-    "decision": "No",
-    "reasoning": "No explicit mention of identity and access management in cloud environments was found in the content."
-  },
-  {
-    "topic": "Multi factor authentication implementation concepts",
-    "decision": "No",
-    "reasoning": "No explicit mention of multi-factor authentication was found in the content."
-  },
-  {
-    "topic": "Public key infrastructure and digital certificates basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of public key infrastructure or digital certificates was found in the content."
-  },
-  {
-    "topic": "Hashing algorithms and password security practices",
-    "decision": "No",
-    "reasoning": "No explicit mention of hashing algorithms or password security practices was found in the content."
-  },
-  {
-    "topic": "Data protection and privacy regulations overview",
-    "decision": "No",
-    "reasoning": "No explicit mention of data protection or privacy regulations was found in the content."
-  },
-  {
-    "topic": "Malware Basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of malware basics was found in the content."
-  },
-  {
-    "topic": "Authentication vs Authorization",
-    "decision": "No",
-    "reasoning": "No explicit mention of authentication vs. authorization was found in the content."
-  },
-  {
-    "topic": "Encryption Basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of encryption basics was found in the content."
-  },
-  {
-    "topic": "Security Policies",
-    "decision": "No",
-    "reasoning": "No explicit mention of security policies was found in the content."
-  },
-  {
-    "topic": "Risk, Threat & Vulnerability",
-    "decision": "Unsure",
-    "reasoning": "Module 2 mentions 'Benefits and Risks of Cloud Computing'. While 'risks' are mentioned, it's too generic to confidently confirm coverage of the broader 'Risk, Threat & Vulnerability' topic in a security context."
-  },
-  {
-    "topic": "Firewalls & IDS/IPS",
-    "decision": "No",
-    "reasoning": "No explicit mention of firewalls or IDS/IPS was found in the content."
-  },
-  {
-    "topic": "Security Awareness",
-    "decision": "No",
-    "reasoning": "No explicit mention of security awareness was found in the content."
-  },
-  {
-    "topic": "Compliance & Standards (ISO, PCI-DSS)",
-    "decision": "No",
-    "reasoning": "No explicit mention of compliance or standards like ISO or PCI-DSS was found in the content."
-  },
-  {
-    "topic": "Cloud Computing fundamentals and service models (IaaS, PaaS, SaaS)",
+    "topic": "Workflow automation",
     "decision": "Yes",
-    "reasoning": "This topic is explicitly covered by 'Definitions and History of Cloud Computing' and 'Cloud Computing Platforms and Service Models' which detail IaaS, PaaS, and SaaS."
+    "reasoning": "Module 6 covers 'The power of automation in marketing,' and the content mentions using 'Generative AI tools... to automate workflows,' explicitly covering workflow automation."
   },
   {
-    "topic": "AWS core services (EC2, S3, RDS, VPC, Route 53)",
+    "topic": "Lead scoring & qualification",
     "decision": "No",
-    "reasoning": "No explicit mention of AWS core services like EC2, S3, RDS, VPC, or Route 53 was found in the content."
+    "reasoning": "No relevant mention of 'Lead scoring & qualification' was found in the content."
   },
   {
-    "topic": "Cloud networking (VPC peering, NAT Gateway, Load Balancer)",
-    "decision": "No",
-    "reasoning": "While 'Enabling Technologies - Networking' is mentioned, specific cloud networking concepts like VPC peering, NAT Gateway, or Load Balancer are not explicitly covered."
-  },
-  {
-    "topic": "High Availability, Disaster Recovery, and Elasticity",
+    "topic": "Behavioral triggers & segmentation",
     "decision": "Unsure",
-    "reasoning": "Module 4 mentions 'horizontal vs. vertical scaling', which relates to elasticity. However, High Availability and Disaster Recovery are not explicitly mentioned, making coverage ambiguous."
+    "reasoning": "While 'Changing consumer behaviour,' 'Behavioural analysis,' and 'Targeting decisions' are covered, 'Behavioral triggers' are not explicitly mentioned, making the full scope of this topic uncertain."
   },
   {
-    "topic": "AWS IAM policies and role based access control",
+    "topic": "MarTech stack integration",
     "decision": "No",
-    "reasoning": "No explicit mention of AWS IAM policies or role-based access control was found in the content."
+    "reasoning": "No relevant mention of 'MarTech stack integration' was found in the content."
   },
   {
-    "topic": "EBS volumes and snapshot management fundamentals",
+    "topic": "Customer Data Platforms (CDP)",
     "decision": "No",
-    "reasoning": "No explicit mention of AWS EBS volumes or snapshot management was found in the content."
+    "reasoning": "No relevant mention of 'Customer Data Platforms (CDP)' was found in the content."
   },
   {
-    "topic": "Auto Scaling group configuration hands on practice",
+    "topic": "Tag management (Google Tag Manager)",
     "decision": "No",
-    "reasoning": "No explicit mention of Auto Scaling groups was found in the content."
+    "reasoning": "No relevant mention of 'Tag management (Google Tag Manager)' was found in the content."
   },
   {
-    "topic": "Basic AWS security groups troubleshooting scenarios",
+    "topic": "E-commerce platforms (Shopify, WooCommerce)",
     "decision": "No",
-    "reasoning": "No explicit mention of AWS security groups or troubleshooting scenarios was found in the content."
+    "reasoning": "No relevant mention of 'E-commerce platforms (Shopify, WooCommerce)' was found in the content."
   },
   {
-    "topic": "S3 lifecycle policies and storage optimization",
+    "topic": "E-commerce funnel analysis",
     "decision": "No",
-    "reasoning": "No explicit mention of AWS S3 lifecycle policies or storage optimization was found in the content."
+    "reasoning": "No relevant mention of 'E-commerce funnel analysis' was found in the content."
   },
   {
-    "topic": "AWS Well Architected Framework introduction",
+    "topic": "Product feed optimization",
     "decision": "No",
-    "reasoning": "No explicit mention of the AWS Well-Architected Framework was found in the content."
+    "reasoning": "No relevant mention of 'Product feed optimization' was found in the content."
   },
   {
-    "topic": "Cloud automation using AWS CloudShell, SDK, and Python (Boto3)",
+    "topic": "Marketplace marketing (Amazon, Etsy)",
     "decision": "No",
-    "reasoning": "While Python is used, there is no explicit mention of AWS CloudShell, SDK, or Boto3 for cloud automation."
+    "reasoning": "No relevant mention of 'Marketplace marketing (Amazon, Etsy)' was found in the content."
   },
   {
-    "topic": "Application provisioning with Elastic Beanstalk and CodePipeline",
+    "topic": "Affiliate marketing",
     "decision": "No",
-    "reasoning": "No explicit mention of Elastic Beanstalk or CodePipeline was found in the content."
+    "reasoning": "No relevant mention of 'Affiliate marketing' was found in the content."
   },
   {
-    "topic": "Monitoring and log analysis using AWS CloudWatch",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS CloudWatch or log analysis using it was found in the content."
-  },
-  {
-    "topic": "Generative AI tools (ChatGPT, Gemini) for cloud automation",
-    "decision": "No",
-    "reasoning": "No explicit mention of Generative AI tools like ChatGPT or Gemini for cloud automation was found in the content."
-  },
-  {
-    "topic": "fundamentals using Ansible for Linux systems.",
-    "decision": "No",
-    "reasoning": "No explicit mention of Ansible was found in the content."
-  },
-  {
-    "topic": "Ansible playbooks for package, service, and user management.",
-    "decision": "No",
-    "reasoning": "No explicit mention of Ansible playbooks was found in the content."
-  },
-  {
-    "topic": "Advanced Ansible concepts",
-    "decision": "No",
-    "reasoning": "No explicit mention of advanced Ansible concepts was found in the content."
-  },
-  {
-    "topic": "Introduction to Terraform infrastructure automation basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of Terraform was found in the content."
-  },
-  {
-    "topic": "CI CD pipeline fundamentals using GitHub Actions",
-    "decision": "No",
-    "reasoning": "While GitHub is mentioned, there is no explicit mention of GitHub Actions or CI/CD pipeline fundamentals."
-  },
-  {
-    "topic": "Secrets management using AWS Secrets Manager",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS Secrets Manager was found in the content."
-  },
-  {
-    "topic": "Infrastructure state management and version control",
+    "topic": "Programmatic advertising basics",
     "decision": "Yes",
-    "reasoning": "The content explicitly mentions 'Getting Started with Git and GitHub' for version control, which is a fundamental aspect of infrastructure state management."
+    "reasoning": "'Programmatic advertising' is explicitly mentioned in learner reviews as a topic covered and made easy to understand."
   },
   {
-    "topic": "Container basics using Docker with AWS integration",
+    "topic": "Dynamic creative optimization (DCO)",
     "decision": "No",
-    "reasoning": "No explicit mention of containers, Docker, or AWS integration with containers was found in the content."
+    "reasoning": "No relevant mention of 'Dynamic creative optimization (DCO)' was found in the content."
   },
   {
-    "topic": "AWS resources using YAML-based CloudFormation templates.",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS CloudFormation or YAML templates was found in the content."
+    "topic": "AI tools for marketers",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'AI-powered digital marketing,' 'AI-driven tools,' and specific 'Generative AI tools like ChatGPT and DALLE,' directly covering AI tools for marketers."
   },
   {
-    "topic": "Managing CloudFormation stacks, updates, and change sets.",
-    "decision": "No",
-    "reasoning": "No explicit mention of managing CloudFormation stacks was found in the content."
+    "topic": "Prompt engineering for marketing",
+    "decision": "Unsure",
+    "reasoning": "While 'Generative AI tools like ChatGPT' are mentioned for content creation, 'Prompt engineering for marketing' is not explicitly named as a topic, making it uncertain if this specific skill is taught."
   },
   {
-    "topic": "Template validation, parameterization, and deployment using AWS CLI.",
-    "decision": "No",
-    "reasoning": "No explicit mention of template validation, parameterization, deployment using AWS CLI, or CloudFormation was found in the content."
+    "topic": "AI-assisted content generation",
+    "decision": "Yes",
+    "reasoning": "Module 12 explicitly covers 'Content generation with AI,' and the content mentions using 'Generative AI tools like ChatGPT and DALLE to create content,' directly addressing AI-assisted content generation."
   },
   {
-    "topic": "infrastructure deployment using reusable templates.",
-    "decision": "No",
-    "reasoning": "No explicit mention of infrastructure deployment using reusable templates was found in the content."
+    "topic": "Predictive analytics with AI",
+    "decision": "Yes",
+    "reasoning": "Module 8 explicitly covers 'Predictive CLV,' and 'AI-powered analytics' is a core theme, indicating coverage of predictive analytics with AI."
   },
   {
-    "topic": "Generative AI tools (ChatGPT, Gemini) for generating Ansible playbooks and CloudFormation templates.",
-    "decision": "No",
-    "reasoning": "No explicit mention of Generative AI tools for generating playbooks or templates was found in the content."
+    "topic": "Marketing AI ethics",
+    "decision": "Yes",
+    "reasoning": "Module 12 explicitly covers 'Ethics and privacy in AI marketing.'"
   },
   {
-    "topic": "AI-driven troubleshooting, optimization, and security automation for cloud infrastructure.",
-    "decision": "No",
-    "reasoning": "No explicit mention of AI-driven troubleshooting, optimization, or security automation for cloud infrastructure was found in the content."
+    "topic": "Chatbot marketing",
+    "decision": "Yes",
+    "reasoning": "Module 12 explicitly covers 'AI-powered chatbots,' and Module 7 mentions 'Typical digital levers for conversational AI, AI agents,' directly covering chatbot marketing."
   },
   {
-    "topic": "Cloud monitoring and observability fundamentals",
-    "decision": "No",
-    "reasoning": "No explicit mention of cloud monitoring or observability fundamentals was found in the content."
+    "topic": "Conversational AI for customer service",
+    "decision": "Yes",
+    "reasoning": "Module 7 covers 'Conversational Commerce' and mentions 'Typical digital levers for conversational AI, AI agents,' which implies the application of conversational AI, including for customer service."
   },
   {
-    "topic": "AWS infrastructure health monitoring techniques",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS infrastructure health monitoring techniques was found in the content."
+    "topic": "AR/VR marketing applications",
+    "decision": "Unsure",
+    "reasoning": "While 'The Impact of Virtual Reality (VR) on marketing' is explicitly mentioned, Augmented Reality (AR) is not, making the full scope of 'AR/VR marketing applications' uncertain."
   },
   {
-    "topic": "CloudWatch metrics and performance analysis",
-    "decision": "No",
-    "reasoning": "No explicit mention of CloudWatch metrics or performance analysis was found in the content."
+    "topic": "KPIs & metrics framework",
+    "decision": "Yes",
+    "reasoning": "Module 8 explicitly covers 'Objectives and Key Results (OKRs) in digital marketing' and 'Digital analytics - Key KPIs: The Touchpoint Flow Approach,' directly addressing KPIs and metrics frameworks."
   },
   {
-    "topic": "Custom CloudWatch dashboards creation",
-    "decision": "No",
-    "reasoning": "No explicit mention of custom CloudWatch dashboards creation was found in the content."
+    "topic": "Google Analytics 4 (GA4)",
+    "decision": "Yes",
+    "reasoning": "'Google Analytics 4' is explicitly mentioned in Module 9."
   },
   {
-    "topic": "AWS CloudTrail for audit logging fundamentals",
-    "decision": "No",
-    "reasoning": "No explicit mention of AWS CloudTrail for audit logging was found in the content."
+    "topic": "Advanced GA4 features",
+    "decision": "Unsure",
+    "reasoning": "While 'Google Analytics 4' is mentioned, 'Advanced GA4 features' are not explicitly detailed, making it uncertain if advanced functionalities are covered beyond the basics."
   },
   {
-    "topic": "GuardDuty and Security Hub introduction basics",
-    "decision": "No",
-    "reasoning": "No explicit mention of GuardDuty or Security Hub was found in the content."
+    "topic": "Behavior analysis tools (Microsoft Clarity, Hotjar)",
+    "decision": "Unsure",
+    "reasoning": "While 'Behavioural analysis' is covered, specific 'Behavior analysis tools' like Microsoft Clarity or Hotjar are not mentioned, leading to uncertainty about practical tool application."
   },
   {
-    "topic": "Basic incident detection and alert response workflow",
-    "decision": "No",
-    "reasoning": "No explicit mention of incident detection or alert response workflow was found in the content."
+    "topic": "Engagement vs. conversion rates",
+    "decision": "Unsure",
+    "reasoning": "While 'Conversion modelling' and 'Key KPIs' are covered, and 'customer engagement' is a skill, the explicit comparison or distinction between 'Engagement vs. conversion rates' is not made, leading to uncertainty."
   },
   {
-    "topic": "Cost monitoring using AWS Cost Explorer",
+    "topic": "Bounce rate & exit rate analysis",
     "decision": "No",
-    "reasoning": "No explicit mention of cost monitoring using AWS Cost Explorer was found in the content."
+    "reasoning": "No relevant mention of 'Bounce rate & exit rate analysis' was found in the content."
   },
   {
-    "topic": "Service level objectives and reliability fundamentals",
-    "decision": "No",
-    "reasoning": "No explicit mention of service level objectives or reliability fundamentals was found in the content."
+    "topic": "Campaign ROI calculation",
+    "decision": "Yes",
+    "reasoning": "Module 8 explicitly covers 'Evaluating Marketing Campaigns: Metrics and ROI,' and 'boost ROI' is a stated program goal, directly covering campaign ROI calculation."
   },
   {
-    "topic": "Alarms, anomaly detection, automated actions",
-    "decision": "No",
-    "reasoning": "No explicit mention of alarms, anomaly detection, or automated actions for monitoring was found in the content."
+    "topic": "Multi-channel attribution",
+    "decision": "Yes",
+    "reasoning": "Module 9 explicitly covers 'Attribution modelling,' and 'full-funnel strategies' are mentioned, which together imply multi-channel attribution."
   },
   {
-    "topic": "Event-driven monitoring with EventBridge",
-    "decision": "No",
-    "reasoning": "No explicit mention of EventBridge or event-driven monitoring was found in the content."
+    "topic": "Performance metrics across channels",
+    "decision": "Yes",
+    "reasoning": "Module 8 covers 'Digital analytics - Key KPIs: The Touchpoint Flow Approach,' and the Stukent simulation mentions 'Monitor and optimise key performance metrics,' explicitly covering performance metrics across channels."
   },
   {
-    "topic": "Centralized logging using CloudWatch Logs",
+    "topic": "Firebase for app analytics",
     "decision": "No",
-    "reasoning": "No explicit mention of centralized logging using CloudWatch Logs was found in the content."
+    "reasoning": "No relevant mention of 'Firebase for app analytics' was found in the content."
   },
   {
-    "topic": "Log querying with Logs Insights",
-    "decision": "No",
-    "reasoning": "No explicit mention of log querying with Logs Insights was found in the content."
+    "topic": "Customer lifetime value (CLV)",
+    "decision": "Yes",
+    "reasoning": "Module 8 explicitly covers 'Predictive CLV,' and 'maximise customer lifetime value (CLV)' is listed as a skill gained."
   },
   {
-    "topic": "AWS compliance and security governance",
+    "topic": "Cohort analysis",
     "decision": "No",
-    "reasoning": "No explicit mention of AWS compliance or security governance was found in the content."
+    "reasoning": "No relevant mention of 'Cohort analysis' was found in the content."
   },
   {
-    "topic": "GenAI-driven cloud monitoring automation",
+    "topic": "Data visualization & reporting (Lookerstudio)",
+    "decision": "Unsure",
+    "reasoning": "While 'Performance dashboards' and 'Data-driven decision making' are mentioned, specific 'Data visualization & reporting' tools like Lookerstudio are not, making the extent of coverage uncertain."
+  },
+  {
+    "topic": "Data privacy & compliance (GDPR, CCPA)",
+    "decision": "Yes",
+    "reasoning": "Module 12 explicitly covers 'Ethics and privacy in AI marketing,' which implies coverage of data privacy and compliance."
+  },
+  {
+    "topic": "First-party data strategies",
     "decision": "No",
-    "reasoning": "No explicit mention of GenAI-driven cloud monitoring automation was found in the content."
+    "reasoning": "No relevant mention of 'First-party data strategies' was found in the content."
+  },
+  {
+    "topic": "Server-side tracking",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Server-side tracking' was found in the content."
+  },
+  {
+    "topic": "Reputation monitoring & enhancement",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Reputation monitoring & enhancement' was found in the content."
+  },
+  {
+    "topic": "Crisis management & response",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Crisis management & response' was found in the content."
+  },
+  {
+    "topic": "Review management strategies",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Review management strategies' was found in the content."
+  },
+  {
+    "topic": "ORM strategy development",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'ORM strategy development' was found in the content."
+  },
+  {
+    "topic": "Brand sentiment analysis",
+    "decision": "Yes",
+    "reasoning": "The hands-on activity 'Social Listening to Create a Social Media Marketing Strategy' clearly implies coverage of brand sentiment analysis."
+  },
+  {
+    "topic": "Marketing strategy development",
+    "decision": "Yes",
+    "reasoning": "The program aims to empower professionals to learn 'end-to-end digital strategy,' and Module 10 covers 'The COMPASS framework for digital strategy,' explicitly covering marketing strategy development."
+  },
+  {
+    "topic": "Competitive analysis frameworks",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Competitive analysis frameworks' was found in the content."
+  },
+  {
+    "topic": "SWOT analysis",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'SWOT analysis' was found in the content."
+  },
+  {
+    "topic": "Budget planning & allocation",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Effectively manage campaign budgets' with Stukent and 'plan budgets' as a skill gained, directly covering budget planning and allocation."
+  },
+  {
+    "topic": "Stakeholder communication",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Stakeholder communication' was found in the content."
+  },
+  {
+    "topic": "Business case development",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Business case development' was found in the content."
+  },
+  {
+    "topic": "Agile marketing methodology",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Agile marketing methodology' was found in the content."
+  },
+  {
+    "topic": "Campaign planning & execution",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'Run Simulated Campaigns,' 'Create and manage simulated campaigns,' 'Executing the digital marketing plan' in Module 10, and 'Plan and execute... campaigns' as a skill, directly covering campaign planning and execution."
+  },
+  {
+    "topic": "Social media graphics & poster design",
+    "decision": "Unsure",
+    "reasoning": "While 'AI-driven visual marketing' and 'social media marketing' are covered, there is no explicit mention of 'Social media graphics & poster design' or related design tools, making the coverage uncertain."
+  },
+  {
+    "topic": "Color theory basics",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Color theory basics' was found in the content."
+  },
+  {
+    "topic": "Template usage & customization",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Template usage & customization' was found in the content."
+  },
+  {
+    "topic": "Visual branding & consistency",
+    "decision": "Unsure",
+    "reasoning": "While 'Brand positioning' and 'AI-driven visual marketing' are mentioned, 'Visual branding & consistency' is not explicitly covered, leading to uncertainty."
+  },
+  {
+    "topic": "Design tools (Canva, Photopea, Adobe Express)",
+    "decision": "No",
+    "reasoning": "No relevant mention of specific 'Design tools (Canva, Photopea, Adobe Express)' was found in the content."
+  },
+  {
+    "topic": "Advertising compliance (FTC guidelines)",
+    "decision": "Unsure",
+    "reasoning": "While 'Ethics and privacy in AI marketing' is covered, specific 'Advertising compliance (FTC guidelines)' is not explicitly mentioned, making the scope of compliance coverage uncertain."
+  },
+  {
+    "topic": "Disclosure requirements for sponsored content",
+    "decision": "Unsure",
+    "reasoning": "While 'Influencer marketing' is covered, 'Disclosure requirements for sponsored content' are not explicitly mentioned, leading to uncertainty about this specific legal aspect."
+  },
+  {
+    "topic": "Accessibility standards (WCAG)",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Accessibility standards (WCAG)' was found in the content."
+  },
+  {
+    "topic": "Intellectual property basics",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Intellectual property basics' was found in the content."
+  },
+  {
+    "topic": "Data privacy regulations",
+    "decision": "Yes",
+    "reasoning": "Module 12 explicitly covers 'Ethics and privacy in AI marketing,' and a 'Privacy Policy' is linked, which implies coverage of data privacy regulations."
+  },
+  {
+    "topic": "Resume building for digital marketing roles",
+    "decision": "No",
+    "reasoning": "While the program aims to be a 'career accelerator' and mentions strengthening a 'portfolio,' there is no explicit mention of 'Resume building for digital marketing roles.'"
+  },
+  {
+    "topic": "Professional communication skills",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Professional communication skills' was found in the content."
+  },
+  {
+    "topic": "Teamwork & collaboration",
+    "decision": "Yes",
+    "reasoning": "The content explicitly mentions 'collaborate with agencies' and 'collaborating with a diverse, accomplished peer group,' indicating coverage of teamwork and collaboration."
+  },
+  {
+    "topic": "Mock interviews & practice",
+    "decision": "No",
+    "reasoning": "No relevant mention of 'Mock interviews & practice' was found in the content."
+  },
+  {
+    "topic": "Portfolio development",
+    "decision": "Yes",
+    "reasoning": "The content explicitly states that the 'Capstone project strengthen your portfolio' and mentions strengthening a 'portfolio,' directly covering portfolio development."
   }
 ]
